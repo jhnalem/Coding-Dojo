@@ -1,0 +1,256 @@
+.blue {
+  color: #0180b3;
+}
+
+.gray {
+  color: #818183;
+}
+
+.orange {
+  color: #f47322;
+}
+
+a {
+  color: #0180b3;
+}
+
+.content-wrap {
+  width: 900px;
+  margin: 0 auto;
+}
+
+header .links {
+  text-align: right;
+}
+
+header ul {
+  background-color: #eee;
+  border: 1px solid #aaa;
+  border-top: 0 none;
+  display: inline-block;
+  margin: 0;
+  padding: 0 10px 7px;
+  border-radius: 0 0 5px 5px;
+  margin-right: 10px;
+}
+
+header li {
+  display: inline-block;
+  padding: 0 5px;
+  position: relative;
+}
+
+header li:after {
+  width: 1px;
+  height: 15px;
+  top: 2px;
+  right: -3px;
+  position: absolute;
+  content: "";
+  background-color: #888;
+}
+
+header li:last-child:after {
+  background-color: transparent;
+}
+
+header a {
+  color: #818183;
+  text-decoration: none;
+  font-size: 12px;
+}
+
+header button {
+  font-size: 12px;
+  background-color: #0180b3;
+  color: white;
+  border: 0 none;
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+header h1 {
+  font-weight: 400;
+  letter-spacing: 2px;
+  padding-left: 75px;
+  background-image: url("screen3-images/logo.png");
+  background-repeat: no-repeat;
+  background-size: 60px auto;
+  background-position: 10px -10px;
+}
+
+header .banner {
+  font-size: 18px;
+  background-color: #0180b3;
+  color: #fff;
+  padding: 10px;
+}
+
+.sidebar {
+  width: 20%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 30px;
+}
+
+.sidebar p.blue {
+  font-weight: 600;
+}
+
+.sidebar p.orange {
+  font-size: 10px;
+  font-weight: 800;
+  margin-bottom: 0;
+}
+
+.sidebar .getStarted {
+  margin-top: 0;
+  font-size: 11px;
+}
+
+.sidebar button {
+  width: 100%;
+  border-radius: 3px;
+  border: 0 none;
+  margin-bottom: 5px;
+  color: white;
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 14px;
+  padding: 5px;
+}
+
+.sidebar button.blue {
+  background-color: #0180b3;
+}
+
+.sidebar button.orange {
+  background-color: #f47322;
+}
+
+.sidebar .cc {
+  font-size: 10px;
+  text-align: center;
+  margin: 0;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar .advertisement {
+  background-image: url("screen3-images/left_content_ad.png");
+  background-position: center center;
+  padding: 10px;
+  height: 241px;
+  margin-top: 20px;
+}
+
+.sidebar .advertisement p {
+  margin: 0 0 10px;
+}
+
+.sidebar .advertisement .blue {
+  font-size: 14px;
+}
+
+.sidebar .advertisement .gray {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.sidebar .advertisement button {
+  font-size: 12px;
+  background-color: #0180b3;
+  padding: 3px;
+}
+
+.sidebar .advertisement .arrow.one {
+  opacity: 0.333;
+}
+
+.sidebar .advertisement .arrow.two {
+  opacity: 0.666;
+}
+
+main {
+  margin-left: 30px;
+  width: 75%;
+  display: inline-block;
+}
+
+main .breadcrumb {
+  display: inline-block;
+  width: 100px;
+  vertical-align: top;
+}
+
+main .breadcrumb a {
+  text-decoration: none;
+  font-size: 12px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+main .breadcrumb img {
+  height: 20px;
+}
+
+main .contact {
+  background-image: url("screen3-images/phone.png");
+  background-repeat: no-repeat;
+  display: inline-block;
+  margin-left: 350px;
+  padding-left: 30px;
+}
+
+main .contact span {
+  display: block;
+  color: #818183;
+  font-size: 12px;
+}
+
+main .contact span.blue {
+  color: #0180b3;
+  font-size: 26px;
+}
+
+main .main-body {
+  margin-top: 10px;
+  border-top: 1px solid #ccc;
+  font-size: 12px;
+  line-height: 1.5;
+  font-size: 12px;
+}
+
+main .main-body h1 {
+  font-size: 16px;
+}
+
+main .main-body ul {
+  padding-left: 10px;
+}
+
+main .main-body .ad {
+  background-image: url("screen3-images/content_ad.png");
+  background-repeat: no-repeat;
+  background-position: 5px 5px;
+  border: 5px solid #83bdd5;
+  padding: 5px 5px 5px 75px;
+  width: 80%;
+}
+
+main .main-body .ad h2 {
+  margin: 0;
+  font-size: 15px;
+}
+
+main .main-body .ad p {
+  margin: 0 0 10px;
+}
+
+main .main-body .ad button {
+  color: white;
+  border: 0 none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background-color: #93b43f;
+}

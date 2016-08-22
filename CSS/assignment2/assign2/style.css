@@ -1,0 +1,61 @@
+header, nav, footer, main {
+  border-radius: 25px;
+}
+
+header, nav, footer {
+  background-color: #ddd;
+}
+
+header {
+  padding: 10px;
+  margin-bottom: 25px;
+}
+
+header h1 {
+  margin: 0;
+}
+
+nav {
+  display: inline-block;
+  padding: 15px;
+  width: 200px;
+  vertical-align: top;
+}
+
+nav ul {
+  margin: 0;
+  padding-left: 15px;
+}
+
+main {
+  display: inline-block;
+  background-color: #aaa;
+  width: 640px;
+  margin-left: 25px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+
+main a {
+  font-weight: bold;
+}
+
+footer {
+  padding: 15px;
+}
+
+a {
+  color: blue;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+p {
+  margin: 0;
+}
+
+.body-wrap {
+  background-color: #eee;
+  width: 970px;
+  margin: 0 auto;
+}

@@ -1,0 +1,64 @@
+#output {
+  width: 300px;
+  font-size: 14px;
+  padding: 10px;
+  border: 2px solid black;
+}
+
+#output.red {
+  background-color: red;
+}
+
+button,
+img {
+  cursor: pointer;
+}
+
+#boxes {
+  border: solid 2px black;
+  padding: 10px;
+}
+
+#boxes div {
+  display: inline-block;
+  vertical-align: top;
+  margin: 5px;
+  width: 40px;
+  height: 40px;
+  text-align: center;
+  border: solid 2px black;
+}
+
+#boxes div:not(#firstBox) {
+  line-height: 40px;
+}
+
+#boxes .before {
+  background-color: blue;
+  color: white;
+}
+
+#boxes .after {
+  background-color: red;
+  color: white;
+}
+
+#boxes .append {
+  background-color: yellow;
+}
+
+#boxes .prepend {
+  background-color: pink;
+}
+
+#magicBox {
+  width: 50px;
+  height: 50px;
+  border: 2px solid black;
+  text-align: center;
+  line-height: 50px;
+}
+
+#dove {
+  border-bottom: 2px solid black;
+}

@@ -1,0 +1,65 @@
+.blue,
+.yellow,
+.pink {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: text-bottom;
+}
+
+div .cell.blank {
+  background-color: transparent;
+  border: 0 none;
+}
+
+div.numbers {
+  display: block;
+  overflow: hidden;
+}
+
+div.numbers .cell {
+  border: 0 none;
+  text-align: center;
+  padding-top: 5px;
+}
+
+.cell {
+  width: 20px;
+  height: 20px;
+  margin: 0 1px 1px 0;
+  display: inline-block;
+  float: left;
+  border: 1px solid #000;
+}
+
+.blue {
+  width: 42px;
+}
+
+.blue .cell {
+  background-color: blue;
+}
+
+.pink {
+  width: 210px;
+}
+
+.pink .cell {
+  background-color: pink;
+}
+
+.yellow {
+  width: 126px;
+}
+
+.yellow .cell {
+  background-color: yellow;
+}
+
+.green {
+  width: 294px;
+  margin-left: 46px;
+}
+
+.green .cell {
+  background-color: green;
+}

@@ -1,0 +1,10 @@
+.image-wrap {
+  width: 100px;
+  height: 100px;
+  display: inline-block;
+}
+
+.image-wrap img {
+  width: 100%;
+  height: 100%;
+}

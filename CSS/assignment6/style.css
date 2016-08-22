@@ -1,0 +1,42 @@
+div {
+    background-color: blue;
+}
+
+#square {
+    width: 150px;
+    height: 150px;
+}
+
+#circle {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+}
+
+#triangle {
+    background-color: transparent;
+    border-left: 75px solid transparent;
+    border-right: 75px solid transparent;
+    border-bottom: 150px solid blue;
+    width: 0;
+    height: 0;
+}
+
+#pacman {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    position: relative;
+}
+
+#pacman:before {
+    position: absolute;
+    width: 75px;
+    height: 75px;
+    background-color: white;
+    content: "";
+    right: -22px;
+    top: 45px;
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+}

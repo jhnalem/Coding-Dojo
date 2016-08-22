@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sortable Ninja</title>
+
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="content-wrap">
+        <h1>Cruise Ship</h1>
+
+        <form id="form">
+            <div class="row">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name">
+            </div>
+
+            <div class="row">
+                <label for="start">Start:</label>
+                <input type="text" id="start" name="start">
+            </div>
+
+            <div class="row">
+                <label for="end">Return:</label>
+                <input type="text" id="end" name="end">
+            </div>
+
+            <div class="row">
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+    </div>
+
+    <div id="error">
+        <p id="nameError">You must include your name! How else are you going to get on the cruise?</p>
+        <p id="dateMissingError">You must select a start and return date!</p>
+        <p id="dateError">Your start date must precede your return date!</p>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+
+    <script src="index.js"></script>
+</body>
+</html>

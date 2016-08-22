@@ -1,0 +1,72 @@
+$size: 20px;
+$margin: 1px;
+
+.blue,
+.yellow,
+.pink {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: text-bottom;
+}
+
+div .cell.blank {
+    background-color: transparent;
+    border: 0 none;
+}
+
+div.numbers {
+    display: block;
+    overflow: hidden;
+}
+
+div.numbers .cell {
+    border: 0 none;
+    text-align: center;
+    padding-top: 5px;
+}
+
+.cell {
+    width: $size;
+    height: $size;
+    margin: 0 $margin $margin 0;
+    display: inline-block;
+    float: left;
+    border: 1px solid #000;
+}
+
+.blue {
+    $cols: 2;
+    width: $size * $cols + $margin * $cols;
+
+    .cell {
+        background-color: blue;
+    }
+}
+
+.pink {
+    $cols: 10;
+    width: $size * $cols + $margin * $cols;
+
+    .cell {
+        background-color: pink;
+    }
+}
+
+.yellow {
+    $cols: 6;
+    width: $size * $cols + $margin * $cols;
+
+    .cell {
+        background-color: yellow;
+    }
+}
+
+.green {
+    $cols: 14;
+    width: $size * $cols + $margin * $cols;
+    margin-left: $size * 2 + $margin * 2 + 4px;
+
+    .cell {
+        background-color: green;
+    }
+}

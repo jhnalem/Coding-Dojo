@@ -1,0 +1,24 @@
+.contact {
+    border: 2px solid black;
+    width: 400px;
+    padding: 10px;
+    height: 100px;
+}
+
+.contact h1 {
+    text-align: center;
+    margin-top: 22.5px;
+}
+
+.contact p {
+    display: none;
+    margin: 0;
+}
+
+.contact.clicked h1 {
+    display: none;
+}
+
+.contact.clicked p {
+    display: block;
+}

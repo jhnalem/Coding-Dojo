@@ -1,0 +1,16 @@
+.errorName #nameError {
+  display: block;
+}
+
+.errorDate #dateError {
+  display: block;
+}
+
+.errorMissingDate #dateMissingError {
+  display: block;
+}
+
+#error p {
+  display: none;
+  text-align: center;
+}

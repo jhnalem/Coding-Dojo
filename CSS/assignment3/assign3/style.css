@@ -1,0 +1,159 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+  font-size: 1;
+}
+
+.content-wrap {
+  width: 970px;
+  margin: 0 auto;
+}
+
+a {
+  color: #900;
+}
+
+header {
+  background-color: #900;
+  margin-bottom: 20px;
+}
+
+header .left,
+header .right {
+  height: 70px;
+  padding: 10px;
+  vertical-align: top;
+  display: inline-block;
+}
+
+header .left {
+  width: 635px;
+}
+
+header .left .logo, header .left .slogan {
+  display: inline-block;
+}
+
+header .left .slogan {
+  color: white;
+  font-size: 24px;
+  font-weight: 300;
+  margin-bottom: 0;
+  margin-top: 15px;
+  vertical-align: top;
+}
+
+header .right {
+  color: white;
+  text-align: right;
+  width: 290px;
+}
+
+header .right a {
+  color: yellow;
+}
+
+header .right form input {
+  padding: 3px;
+}
+
+header .right form input[type="submit"] {
+  border: 1px solid white;
+  background-color: transparent;
+  color: white;
+  font-weight: 600;
+  padding: 0 5px;
+  font-size: 12px;
+}
+
+header .right .shortlinks {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+header .right .shortlinks a {
+  text-decoration: underline;
+}
+
+header nav {
+  width: 100%;
+  background-color: #ddd;
+  border: 1px solid #ccc;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+header nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+header nav li {
+  display: inline-block;
+  padding: 7px 10px;
+  position: relative;
+}
+
+header nav li:after {
+  position: absolute;
+  content: "";
+  right: -5px;
+  top: 5px;
+  width: 1px;
+  height: 20px;
+  background-color: #aaa;
+}
+
+header nav li:last-child:after {
+  background-color: transparent;
+}
+
+header nav a {
+  text-decoration: none;
+  color: #777;
+  font-weight: 700;
+}
+
+.sidebar {
+  display: inline-block;
+  width: 170px;
+  padding: 20px 0;
+  vertical-align: top;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar ul {
+  margin: 0;
+}
+
+.sidebar li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  line-height: 17px;
+}
+
+main {
+  display: inline-block;
+  width: 700px;
+  margin-left: 20px;
+}
+
+main h1 {
+  color: #900;
+  font-size: 18px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+main h2 {
+  color: #900;
+  font-size: 14px;
+}
+
+main .news {
+  font-size: 14px;
+}
