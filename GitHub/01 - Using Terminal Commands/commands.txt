@@ -1,0 +1,15 @@
+cd desktop
+mkdir test
+cd test
+echo $null >> index.html
+echo $null >> styles.css
+echo $null >> commands.txt
+copy index.html index_2.html
+cd ../
+mkdir destination
+cd destination
+move ../test/index_2.html ./
+cd ../test
+del styles.css
+cd destination
+del destination

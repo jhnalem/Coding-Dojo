@@ -1,0 +1,270 @@
+.content-wrap {
+  width: 1000px;
+  margin: 50px auto;
+}
+
+header {
+  background-color: #eee;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.nav {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: inline-block;
+  width: 610px;
+}
+
+.nav li {
+  display: inline-block;
+  padding: 0 25px;
+  cursor: pointer;
+  height: 60px;
+  vertical-align: top;
+  line-height: 60px;
+  font-weight: 600;
+  border-right: 1px solid #ccc;
+}
+
+.nav .home {
+  background-image: url("images/menu_icon1.png");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  height: 60px;
+  width: 74px;
+  border-radius: 5px 0 0 5px;
+}
+
+.search {
+  display: inline-block;
+  vertical-align: top;
+  width: 380px;
+  padding-left: 115px;
+  padding-top: 16px;
+}
+
+.search .text {
+  border-radius: 15px 0 0 15px;
+  border: 1px none #ccc;
+  padding: 5px 5px 5px 15px;
+  vertical-align: top;
+}
+
+.search .submit {
+  margin-left: -3px;
+  border: 0 none;
+  background-image: url("images/menu_icon2.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100% auto;
+  border-radius: 0 15px 15px 0;
+  width: 33px;
+  height: 30px;
+}
+
+main {
+  margin: 25px 0 50px;
+}
+
+.banner-wrap img {
+  display: block;
+  width: 100%;
+}
+
+.banner-wrap .banner-selector {
+  background-color: #48403d;
+  list-style: none;
+  margin: 0;
+  padding-left: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.banner-wrap .banner-selector li {
+  color: #88b5d4;
+  display: inline-block;
+  padding: 12px 15px;
+  position: relative;
+}
+
+.banner-wrap .banner-selector li:last-child:after {
+  background-color: transparent;
+}
+
+.banner-wrap .banner-selector li:after {
+  width: 1px;
+  height: 20px;
+  position: absolute;
+  content: "";
+  background-color: #aaa;
+  right: -5px;
+  top: 10px;
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.banner-wrap .banner-selector .selected {
+  color: white;
+}
+
+.main-wrap {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-top: 25px;
+  padding-bottom: 50px;
+  background: -webkit-linear-gradient(white, #fafafa);
+  background: linear-gradient(white, #fafafa);
+}
+
+.main-wrap h1 {
+  color: #bbb;
+  font-weight: 300;
+  font-size: 34px;
+  display: inline-block;
+  padding: 30px 20px;
+  width: 600px;
+  margin: 0;
+  position: relative;
+}
+
+.main-wrap h1:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  height: 40px;
+  top: 30px;
+  background-color: #ddd;
+  width: 1px;
+}
+
+.main-wrap .browse {
+  background: -webkit-linear-gradient(#5491bd, #406e8f);
+  background: linear-gradient(#5491bd, #406e8f);
+  border: 0 none;
+  border-radius: 5px;
+  color: #eee;
+  cursor: pointer;
+  font-size: 24px;
+  margin-left: 40px;
+  padding: 10px 115px 10px 25px;
+  position: relative;
+  top: -5px;
+}
+
+.main-wrap .browse:after {
+  content: ">>";
+  color: #ddd;
+  position: absolute;
+  right: 20px;
+}
+
+.main-wrap .subhero-wrap {
+  padding: 40px 10px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+
+.main-wrap .subhero {
+  display: inline-block;
+  width: 240px;
+  padding: 0 10px;
+  border-right: 1px solid #ccc;
+  vertical-align: top;
+  position: relative;
+  height: 310px;
+}
+
+.main-wrap .subhero:last-child {
+  border: 0 none;
+}
+
+.main-wrap .subhero.video h2 {
+  background-image: url("images/content_icon1.png");
+}
+
+.main-wrap .subhero.tour h2 {
+  background-image: url("images/content_icon2.png");
+}
+
+.main-wrap .subhero.trial h2 {
+  background-image: url("images/content_icon3.png");
+}
+
+.main-wrap .subhero.buy h2 {
+  background-image: url("images/content_icon4.png");
+}
+
+.main-wrap .subhero h2 {
+  background-repeat: no-repeat;
+  background-size: auto 30px;
+  background-position: 0 -2px;
+  margin: 0;
+  padding: 5px 0 20px 35px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.main-wrap .subhero p {
+  font-size: 14px;
+}
+
+.main-wrap .subhero img {
+  width: 100%;
+}
+
+.main-wrap .subhero button {
+  background: -webkit-linear-gradient(#5cb4f3, #5ba4db);
+  background: linear-gradient(#5cb4f3, #5ba4db);
+  color: white;
+  border: 0 none;
+  width: 210px;
+  padding: 7px;
+  position: absolute;
+  bottom: 0;
+  left: 16px;
+  border-radius: 2px;
+  border-radius: 5px;
+}
+
+footer .block {
+  display: inline-block;
+  width: 150px;
+  margin-left: 0;
+  vertical-align: top;
+}
+
+footer .block + .block {
+  margin-left: 15px;
+}
+
+footer h1 {
+  font-size: 16px;
+  margin: 0;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+footer ul {
+  margin-top: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+footer li {
+  font-size: 12px;
+  margin-bottom: 12px;
+}
+
+.copyright {
+  color: #999;
+  border-top: 1px solid #ccc;
+  padding-top: 20px;
+  font-size: 12px;
+}
+
+.copyright span {
+  display: inline-block;
+  margin: 0 5px;
+}
