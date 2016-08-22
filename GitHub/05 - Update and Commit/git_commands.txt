@@ -1,0 +1,8 @@
+Forked repository through GitHub
+
+git clone git@github.com:christiankwon/git_demo.git
+git add .
+git commit -m "add info"
+git push
+
+Submit pull request via GitHub
