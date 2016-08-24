@@ -1,65 +1,110 @@
-.blue,
-.yellow,
-.pink {
-  display: inline-block;
-  overflow: hidden;
-  vertical-align: text-bottom;
-}
-
-div .cell.blank {
-  background-color: transparent;
-  border: 0 none;
-}
-
-div.numbers {
-  display: block;
-  overflow: hidden;
-}
-
-div.numbers .cell {
-  border: 0 none;
-  text-align: center;
-  padding-top: 5px;
-}
-
-.cell {
-  width: 20px;
-  height: 20px;
-  margin: 0 1px 1px 0;
-  display: inline-block;
-  float: left;
-  border: 1px solid #000;
-}
-
 .blue {
-  width: 42px;
-}
-
-.blue .cell {
-  background-color: blue;
-}
-
-.pink {
-  width: 210px;
-}
-
-.pink .cell {
-  background-color: pink;
-}
-
-.yellow {
-  width: 126px;
-}
-
-.yellow .cell {
-  background-color: yellow;
+  background-color: #689bff;
 }
 
 .green {
-  width: 294px;
-  margin-left: 46px;
+  background-color: #1fca21;
 }
 
-.green .cell {
-  background-color: green;
+.pink {
+  background-color: #fd9a98;
+}
+
+.yellow {
+  background-color: #fecb00;
+}
+
+.cell {
+  width: 50px;
+  height: 50px;
+  margin: 0 3px 3px 0;
+  display: inline-block;
+  float: left;
+  border: 1px solid #000;
+  text-align: center;
+  font-size: 12px;
+  padding: 1px;
+}
+
+.cell.number {
+  border-color: transparent;
+  color: red;
+  line-height: 50px;
+}
+
+.cell span {
+  color: #1913a1;
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.blank {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.left {
+  width: 159px;
+  margin-right: 15px;
+  display: inline-block;
+  position: relative;
+}
+
+.left:before, .left:after {
+  position: absolute;
+  left: 35px;
+}
+
+.left:before {
+  content: "*Lanthanoids";
+  bottom: -65px;
+  margin-bottom: 7px;
+  color: red;
+}
+
+.left:after {
+  content: "**Actinoids";
+  bottom: -115px;
+  margin-bottom: 8px;
+  color: red;
+}
+
+.big-right {
+  width: 848px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+.center {
+  display: inline-block;
+  width: 530px;
+}
+
+.right {
+  display: inline-block;
+  width: 318px;
+}
+
+.bottom {
+  display: inline-block;
+  margin-top: 15px;
+  position: relative;
+  width: 742px;
+}
+
+.bottom:before {
+  content: "*";
+  color: red;
+  left: -9px;
+  top: 17px;
+  position: absolute;
+}
+
+.bottom:after {
+  content: "**";
+  color: red;
+  left: -15px;
+  bottom: 10px;
+  position: absolute;
 }

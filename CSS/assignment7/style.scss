@@ -1,29 +1,11 @@
-$size: 20px;
-$margin: 1px;
+$size: 50px;
+$margin: 3px;
+$margin-between: 15px;
 
-.blue,
-.yellow,
-.pink {
-    display: inline-block;
-    overflow: hidden;
-    vertical-align: text-bottom;
-}
-
-div .cell.blank {
-    background-color: transparent;
-    border: 0 none;
-}
-
-div.numbers {
-    display: block;
-    overflow: hidden;
-}
-
-div.numbers .cell {
-    border: 0 none;
-    text-align: center;
-    padding-top: 5px;
-}
+.blue { background-color: #689bff; }
+.green { background-color: #1fca21; }
+.pink { background-color: #fd9a98; }
+.yellow { background-color: #fecb00; }
 
 .cell {
     width: $size;
@@ -32,41 +14,98 @@ div.numbers .cell {
     display: inline-block;
     float: left;
     border: 1px solid #000;
-}
+    text-align: center;
+    font-size: 12px;
+    padding: 1px;
 
-.blue {
-    $cols: 2;
-    width: $size * $cols + $margin * $cols;
+    &.number {
+        border-color: transparent;
+        color: red;
+        line-height: $size;
+    }
 
-    .cell {
-        background-color: blue;
+    span {
+        color: #1913a1;
+        display: block;
+        font-size: 16px;
+        font-weight: 600;
     }
 }
 
-.pink {
+.blank {
+    background-color: transparent;
+    border-color: transparent;
+}
+
+.left {
+    $cols: 3;
+    width: $size * $cols + $margin * $cols;
+
+    margin-right: $margin-between;
+    display: inline-block;
+    position: relative;
+
+    &:before,
+    &:after {
+        position: absolute;
+        left: $size - $margin-between;
+    }
+
+    &:before {
+        content: "*Lanthanoids";
+        bottom: ($margin-between + $size) * -1;
+        margin-bottom: 7px;
+        color: red;
+    }
+
+    &:after {
+        content: "**Actinoids";
+        bottom: ($margin-between + $size * 2) * -1;
+        margin-bottom: 8px;
+        color: red;
+    }
+}
+
+.big-right {
+    $cols: 16;
+    width: $size * $cols + $margin * $cols;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.center {
+    display: inline-block;
     $cols: 10;
     width: $size * $cols + $margin * $cols;
-
-    .cell {
-        background-color: pink;
-    }
 }
 
-.yellow {
+.right {
+    display: inline-block;
     $cols: 6;
     width: $size * $cols + $margin * $cols;
-
-    .cell {
-        background-color: yellow;
-    }
 }
 
-.green {
+.bottom {
+    display: inline-block;
+    margin-top: $margin-between;
+    position: relative;
+
     $cols: 14;
     width: $size * $cols + $margin * $cols;
-    margin-left: $size * 2 + $margin * 2 + 4px;
 
-    .cell {
-        background-color: green;
+    &:before {
+        content: "*";
+        color: red;
+        left: -9px;
+        top: 17px;
+        position: absolute;
+    }
+
+    &:after {
+        content: "**";
+        color: red;
+        left: -15px;
+        bottom: 10px;
+        position: absolute;
     }
 }

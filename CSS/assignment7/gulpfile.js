@@ -39,7 +39,6 @@ gulp.task('sass', function() {
 // Watch Files For Changes
 gulp.task('watch', function() {
     gulp.watch('*.scss', ['sass']);
-    gulp.watch("*.js").on('change', browserSync.reload);
     gulp.watch("*.html").on('change', browserSync.reload);
 });
 
