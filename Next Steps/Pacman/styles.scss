@@ -1,0 +1,55 @@
+body {
+    background-color: #000;
+}
+
+.row {
+    overflow: hidden;
+
+    div {
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin: 2px;
+    }
+}
+
+.wall {
+    background-color: blue;
+}
+
+.dot {
+    position: relative;
+
+    &:before {
+        content: "";
+        position: absolute;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #fff;
+        left: 7px;
+        top: 7px;
+    }
+}
+
+.cherry {
+    background-image: url("images/cherry.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+
+#points {
+    color: #fff;
+}
+
+#pacman {
+    background-image: url("images/pacman.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &[data-direction="right"] { transform: rotate(0deg); }
+    &[data-direction="left"] { transform: rotate(180deg); }
+    &[data-direction="up"] { transform: rotate(-90deg); }
+    &[data-direction="down"] { transform: rotate(90deg); }
+}

@@ -1,0 +1,69 @@
+body {
+  background-color: #000;
+}
+
+.row {
+  overflow: hidden;
+}
+
+.row div {
+  width: 20px;
+  height: 20px;
+  float: left;
+  margin: 2px;
+}
+
+.wall {
+  background-color: blue;
+}
+
+.dot {
+  position: relative;
+}
+
+.dot:before {
+  content: "";
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #fff;
+  left: 7px;
+  top: 7px;
+}
+
+.cherry {
+  background-image: url("images/cherry.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#points {
+  color: #fff;
+}
+
+#pacman {
+  background-image: url("images/pacman.gif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#pacman[data-direction="right"] {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+#pacman[data-direction="left"] {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+#pacman[data-direction="up"] {
+  -webkit-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+
+#pacman[data-direction="down"] {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
