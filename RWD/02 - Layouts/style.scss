@@ -1,0 +1,49 @@
+@import "../../scss/mixins/breakpoints";
+@import "normalize";
+
+.content-wrap {
+    margin: 5%;
+}
+
+header {
+    background-color: #ccc;
+    margin-bottom: 25px;
+    padding: 20px;
+}
+
+nav {
+    ul {
+        padding: 0;
+        list-style: none;
+    }
+
+    li {
+        display: inline-block;
+        text-decoration: underline;
+        border: 1px solid #666;
+        background-color: #ddd;
+        padding: 0.5em;
+    }
+}
+
+.subheroes {
+    div {
+        float: left;
+        width: 25%;
+        padding: 1em;
+    }
+}
+
+@include bp(max-width, 975px) {
+    nav {
+        display: none;
+    }
+
+    .subheroes div {
+        width: 33.3333%;
+    }
+
+    .subheroes  div:last-child {
+        width: 100%;
+    }
+}
