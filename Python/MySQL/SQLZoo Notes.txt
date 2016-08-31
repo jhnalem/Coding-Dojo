@@ -1,0 +1,5 @@
+When working with NULL values, the COALESCE function is useful to print something in place of it.
+
+Using SELECT statements within SELECT statements allows for exponentially more complex queries, but also more confusing ones.
+
+CASE is potentially a useful function for selecting rows.
