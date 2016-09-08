@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+
+<body>
+    <div class="row">
+        <label for="gold_counter">Your Gold:</label>
+        <input type="text" value="{{gold}}" disabled>
+    </div>
+
+    <div class="row">
+        <form action="/process_money" class="choice" method="post">
+            <h1>Farm</h1>
+            <p>(earns 10-20 golds)</p>
+            <input type="hidden" value="farm" name="choice">
+            <button>Find Gold!</button>
+        </form>
+
+        <form action="/process_money" class="choice" method="post">
+            <h1>Cave</h1>
+            <p>(earns 5-10 golds)</p>
+            <input type="hidden" value="cave" name="choice">
+            <button>Find Gold!</button>
+        </form>
+
+        <form action="/process_money" class="choice" method="post">
+            <h1>House</h1>
+            <p>(earns 2-5 golds)</p>
+            <input type="hidden" value="house" name="choice">
+            <button>Find Gold!</button>
+        </form>
+
+        <form action="/process_money" class="choice" method="post">
+            <h1>Casino</h1>
+            <p>(earns 0-50 golds)</p>
+            <input type="hidden" value="casino" name="choice">
+            <button>Find Gold!</button>
+        </form>
+    </div>
+
+    <div class="row">
+        <label for="activities">Activities:</label>
+        <textarea id="activities" disabled>{{activities}}</textarea>
+    </div>
+
+    <div class="row">
+        <form action="/reset" method="post">
+            <button>Start over!</button>
+        </form>
+    </div>
+</body>
+</html>

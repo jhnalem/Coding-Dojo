@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Counter</title>
+
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    </head>
+
+    <body>
+        <h1>Welcome to the Great Number Game</h1>
+
+        <p>I am thinking of a number between 1 and 100.</p>
+        <p>Take a guess!</p>
+
+        <div class="helper {{text}}">
+            <div class="low">Too low!</div>
+            <div class="high">Too high!</div>
+            <div class="perfect">Gottem's</div>
+        </div>
+
+        <form action="/guess" method="post">
+            <input name="number" type="text">
+            <button>Guess</button>
+        </form>
+
+        <form class="reset" action="/reset" method="post">
+            <button>Play again?</button>
+        </form>
+    </body>
+</html>

@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Counter</title>
+    </head>
+
+    <body>
+        <h1>Counter</h1>
+        <span>{{ session['count'] }} times.</span>
+
+        <form action="/ninjas" method="post">
+            <button>+2</button>
+        </form>
+
+        <form action="/reset" method="post">
+            <button>Again!</button>
+        </form>
+    </body>
+</html>

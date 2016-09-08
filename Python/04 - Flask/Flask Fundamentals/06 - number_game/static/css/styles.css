@@ -1,0 +1,42 @@
+body {
+    text-align: center;
+}
+
+.helper div {
+    display: none;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border: 1px solid black;
+    margin: 25px auto;
+    color: white;
+    text-transform: uppercase;
+}
+
+.helper.low .low {
+    display: block;
+    background-color: red;
+}
+
+.helper.high .high {
+    display: block;
+    background-color: red;
+}
+
+.helper.perfect .perfect {
+    display: block;
+    background-color: green;
+}
+
+.helper.perfect + form {
+    display: none;
+}
+
+.reset {
+    display: none;
+}
+
+.helper.perfect ~ .reset {
+    display: block;
+}
+

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Disappearing Ninjas</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row center-align">
+            <h1>Ninjas?</h1>
+
+            {% if not color %}
+                <p>There are no ninjas here.</p>
+
+            {% elif color == 'ninjas' %}
+                <img src="{{ url_for('static', filename='images/donatello.jpg') }}">
+                <img src="{{ url_for('static', filename='images/leonardo.jpg') }}">
+                <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
+                <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
+
+            {% elif color == 'donatello' %}
+                <img src="{{ url_for('static', filename='images/donatello.jpg') }}">
+
+            {% elif color == 'leonardo' %}
+                <img src="{{ url_for('static', filename='images/leonardo.jpg') }}">
+
+            {% elif color == 'michelangelo' %}
+                <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
+
+            {% elif color == 'raphael' %}
+                <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
+
+            {% elif color == 'notapril' %}
+                <img src="{{ url_for('static', filename='images/notapril.jpg') }}">
+
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
+</html>

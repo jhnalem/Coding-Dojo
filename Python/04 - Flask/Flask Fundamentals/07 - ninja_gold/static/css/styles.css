@@ -1,0 +1,39 @@
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+body {
+
+}
+
+.row {
+    width: 100%;
+    margin: 25px 0;
+}
+
+.choice {
+    width: 20%;
+    float: left;
+    border: 1px solid black;
+    text-align: center;
+    padding: 25px;
+    margin: 2.5%;
+}
+
+.choice h1 {
+    margin: 0;
+}
+
+label {
+    vertical-align: top;
+}
+
+textarea {
+    width:  1000px;
+    height: 200px;
+    resize: none;
+}

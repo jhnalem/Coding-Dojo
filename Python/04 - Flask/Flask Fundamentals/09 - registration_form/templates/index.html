@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Registration Form</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">Registration Form</h1>
+
+        {% with messages = get_flashed_messages(category_filter=["success"]) %}
+            {% if messages %}
+                <div class="section success center-align white-text green darken-2">
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% with messages = get_flashed_messages(category_filter=["error"]) %}
+            {% if messages %}
+                <div class="section errors center-align white-text red darken-3">
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/process" method="post" class="section">
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input type="email" id="email" name="email" value="{{session['email']}}">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input type="text" id="fname" name="fname" value="{{session['fname']}}">
+                    <label for="fname">First Name:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input type="text" id="lname" name="lname" value="{{session['lname']}}">
+                    <label for="lname">Last Name:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input type="date" id="birthday" name="birthday" class="datepicker" value="{{session['birthday']}}">
+                    <label for="birthday">Birthday:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input type="password" id="password" name="password" value="{{session['password']}}">
+                    <label for="password">Password:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input type="password" id="confirm_pass" name="confirm_pass" value="{{session['confirm_pass']}}">
+                    <label for="confirm_pass">Confirm Password:</label>
+                </div>
+            </div>
+
+            <div class="row center-align">
+                <button class="btn-large">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            Materialize.updateTextFields();
+            $('.datepicker').pickadate({
+                selectMonths: true,
+                selectYears: 100,
+                max: true,
+                onSet: function(thing) {
+                    this.$root.next().addClass('active');
+                }
+            });
+
+        });
+
+        $('h1').on('click', function() {
+            $('#email').val('test@email.com').focus();
+            $('#fname').val('Foo').focus();
+            $('#lname').val('Bar').focus();
+            $('#password').val('abcdASDF123').focus();
+            $('#confirm_pass').val('abcdASDF123').focus();
+        });
+    </script>
+</body>
+</html>
