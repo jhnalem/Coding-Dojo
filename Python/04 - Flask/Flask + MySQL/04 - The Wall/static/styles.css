@@ -1,0 +1,45 @@
+.section {
+    margin-bottom: 25px;
+}
+
+nav {
+    line-height: 64px;
+    margin-bottom: 25px;
+}
+
+.page-title {
+    font-size: 2.1rem;
+}
+
+.comment {
+    padding-left: 50px;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.row.comment > a {
+    position: absolute;
+    left: 35px;
+    top: -3px;
+}
+
+.comment .input-field {
+    margin-top: 0;
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h5, h6 {
+    font-weight: 600;
+}
+
+.message > p {
+    margin-bottom: 30px;
+}
+
+textarea.materialize-textarea {
+    min-height: 1rem;
+    height: 1rem;
+}

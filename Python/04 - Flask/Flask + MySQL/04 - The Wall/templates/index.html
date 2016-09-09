@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Welcome | The Wall</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    {% include 'layout/header.html' %}
+
+    <div class="container">
+        {% with messages = get_flashed_messages(category_filter=['welcome']) %}
+            {% if messages %}
+                <div class="section center-align white-text green darken-2">
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        {% with messages = get_flashed_messages(category_filter=['error']) %}
+            {% if messages %}
+                <div class="section center-align white-text red darken-2">
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <div class="section center-align">
+            {% if session['user'] %}
+                <h2>Welcome back {{ session['name'] }}!</h2>
+            {% else %}
+                <h2>Welcome!</h2>
+            {% endif %}
+        </div>
+
+        <div class="section center-align">
+            {% if session['user'] %}
+                <div class="row">
+                    <div class="col s12">
+                        <a href="/wall" class="btn-large orange">The Wall</a>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12">
+                        <a href="/logout" class="btn">Log Out</a>
+                    </div>
+                </div>
+            {% else %}
+                <div class="row">
+                    <div class="col s6">
+                        <a href="/login" class="btn-large">Login</a>
+                    </div>
+
+                    <div class="col s6">
+                        <a href="/register" class="btn-large">Register</a>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
+</html>

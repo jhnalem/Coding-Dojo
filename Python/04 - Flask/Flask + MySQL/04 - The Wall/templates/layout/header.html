@@ -1,0 +1,14 @@
+<nav class="blue-grey darken-2" role="navigation">
+    <div class="nav-wrapper container">
+        <a href="/" class="page-title">The Wall</a>
+
+        <ul class="right hide-on-med-and-down">
+            {% if session['user'] %}
+                <!-- <li>Welcome {{ session['name'] }}</li> -->
+                <li><a href="/logout">Log Out</a></li>
+            {% else %}
+                <li><a href="/login">Log in</a></li>
+            {% endif %}
+        </ul>
+    </div>
+</nav>

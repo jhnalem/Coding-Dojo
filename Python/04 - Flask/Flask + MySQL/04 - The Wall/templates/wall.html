@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>The Wall</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+
+<body>
+    {% include 'layout/header.html' %}
+
+    <div class="container">
+        <div class="section">
+            <form action="/submit_message" class="row" method="post">
+                <div class="input-field col s12">
+                    <textarea name="message" id="message" class="materialize-textarea"></textarea>
+                    <label for="message">New Message</label>
+                </div>
+
+                <div class="col s12 right-align">
+                    <button class="btn">Post a message</button>
+                </div>
+            </form>
+        </div>
+
+        {% if all_messages %}
+            <div class="section messages">
+                <div class="row">
+                    <h3 class="">All Messages</h3>
+                </div>
+                {% for msg in all_messages %}
+                    <div class="row message">
+                        <h5>{{ msg['first_name'] }} {{ msg['last_name'] }} - {{ msg['created_at'].strftime('%B %d, %Y - %I:%M:%S') }}</h5>
+                        <p>{{ msg['message'] }}</p>
+
+                        {% if msg['comments'] %}
+                            {% for com in msg['comments'] %}
+                                <div class="row comment">
+                                    {% if com['removeable'] %}
+                                         <a href="/remove_comment/{{ com['id'] }}" title="Remove this comment">X</a>
+                                    {% endif %}
+
+                                    <h6>{{ com['first_name'] }} {{ com['last_name'] }} - {{com['created_at'].strftime('%B %d, %Y - %I:%M:%S') }}</h6>
+                                    <p>{{ com['comment'] }}</p>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+
+                        <form action="/submit_comment" class="row comment" method="post">
+                            <div class="input-field col s12">
+                                <input type="hidden" name="message_id" value="{{msg['id']}}">
+                                <textarea name="comment" id="message-{{msg['id']}}" class="materialize-textarea"></textarea>
+                                <label for="message-{{msg['id']}}">New Comment</label>
+                            </div>
+
+                            <div class="col s12 right-align">
+                                <button class="btn">Post a comment</button>
+                            </div>
+                        </form>
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
+</html>

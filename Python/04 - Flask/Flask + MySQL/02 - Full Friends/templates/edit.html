@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Edit a Friend</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="section center-align">
+            <h2>Editing {{ fname }} {{ lname }}'s account</h2>
+        </div>
+
+        {% with messages = get_flashed_messages(category_filter=['error']) %}
+            {% if messages %}
+                <div class="section center-align white-text red darken-2">
+                {% for message in messages %}
+                    <p>{{message}}</p>
+                {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
+
+        <form action="/friends/{{ id }}" class="section" method="post">
+            <div class="row">
+                <div class="input-field col s4 offset-s2">
+                    <input type="text" name="fname" id="fname" value="{{ fname }}">
+                    <label for="fname">First Name:</label>
+                </div>
+
+                <div class="input-field col s4">
+                    <input type="text" name="lname" id="lname" value="{{ lname }}">
+                    <label for="lname">Last Name:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <input type="text" name="email" id="email" value="{{ email }}">
+                    <label for="email">Email Address:</label>
+                </div>
+            </div>
+
+            <div class="row center-align">
+                <div class="input-field col s8 offset-s2">
+                    <button class="btn-large">Submit</button>
+                </div>
+            </div>
+        </form>
+
+        <div class="section center-align">
+            <a href="/">Return Home</a>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+</body>
+</html>
