@@ -23,20 +23,8 @@
                 <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
                 <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
 
-            {% elif color == 'donatello' %}
-                <img src="{{ url_for('static', filename='images/donatello.jpg') }}">
-
-            {% elif color == 'leonardo' %}
-                <img src="{{ url_for('static', filename='images/leonardo.jpg') }}">
-
-            {% elif color == 'michelangelo' %}
-                <img src="{{ url_for('static', filename='images/michelangelo.jpg') }}">
-
-            {% elif color == 'raphael' %}
-                <img src="{{ url_for('static', filename='images/raphael.jpg') }}">
-
-            {% elif color == 'notapril' %}
-                <img src="{{ url_for('static', filename='images/notapril.jpg') }}">
+            {% else %}
+                <img src="{{ url_for('static', filename='images/{{color}}.jpg') }}">
 
             {% endif %}
         </div>
