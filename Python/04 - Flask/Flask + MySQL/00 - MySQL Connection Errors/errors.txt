@@ -1,0 +1,11 @@
+Error: OperationalError: (_mysql_exceptions.OperationalError) (1045, "Access denied for user 'root123'@'localhost' (using password: YES)")
+Fix: User is not found in database
+
+Error: mysql.connector.errors.ProgrammingError: 1045 (28000): Access denied for user 'root'@'localhost' (using password: NO)
+Fix: Password is incorrect
+
+Error: OperationalError: (_mysql_exceptions.OperationalError) (2003, "Can't connect to MySQL server on '127.0.0.1' (10061)")
+Fix: Confirm that the port number is correct
+
+Error: TemplateNotFound: index.html
+Fix: Confirm that the host port is correct
