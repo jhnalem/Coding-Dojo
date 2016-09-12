@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Weather</title>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="center-align">Weather</h1>
+
+        <form class="section" action="/">
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <input type="text" id="location" name="location">
+                    <label for="location">City</label>
+                </div>
+            </div>
+
+            <div class="row center-align">
+                <div class="input-field col s4 offset-s4">
+                    <input class="btn-large" type="submit" value="Submit">
+                </div>
+            </div>
+        </div>
+
+        <div id="weather" class="section center-align">
+            <h2>Current temperature for <span id="city"></span></h2>
+            <p id="temp"></p>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js" integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
