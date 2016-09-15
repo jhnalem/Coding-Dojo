@@ -20,8 +20,7 @@ class Animal( object ):
 
 class Dog( Animal ):
     def __init__( self, name = 'Dog', health = 150 ):
-        super(Dog, self).__init__()
-        self.health = health
+        super(Dog, self).__init__(name, health)
 
     def pet( self ):
         self.health += 5
@@ -30,8 +29,7 @@ class Dog( Animal ):
 
 class Dragon( Animal ):
     def __init__( self, name = 'Dragon', health = 170 ):
-        super(Dragon, self).__init__()
-        self.health = health
+        super(Dragon, self).__init__(name, health)
 
     def fly( self ):
         self.health -= 10
