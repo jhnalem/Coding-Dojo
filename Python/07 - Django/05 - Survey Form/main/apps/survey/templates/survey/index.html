@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'survey/css/materialize.min.css' %}"  media="screen,projection"/>
+
+    <title>Survey Form</title>
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="center-align">Survey Form</h1>
+
+        <form action="/process" method="post" class="section">
+            {% csrf_token %}
+
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <input type="text" id="name" name="name">
+                    <label for="name">Your Name</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <select name="location" id="location">
+                        <option value="Seattle">Seattle</option>
+                        <option value="San Fransisco">San Fransisco</option>
+                        <option value="Chicago">Chicago</option>
+                    </select>
+                    <label for="location">Dojo Location</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <select name="language" id="language">
+                        <option value="Python">Python</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="HTML/CSS">HTML/CSS</option>
+                    </select>
+                    <label for="language">Favorite Language</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s4 offset-s4">
+                    <textarea name="comment" id="comment" class="materialize-textarea"></textarea>
+                    <label for="comment">Comment (optional)</label>
+                </div>
+            </div>
+
+            <div class="row center-align">
+                <div class="input-field col s4 offset-s4">
+                    <input type="submit" value="Submit" class="btn-large">
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'survey/js/jquery.min.js' %}"></script>
+    <script src="{% static 'survey/js/materialize.min.js' %}"></script>
+    <script src="{% static 'survey/js/script.js' %}"></script>
+</body>
+</html>

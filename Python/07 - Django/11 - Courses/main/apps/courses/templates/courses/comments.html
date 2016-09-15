@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'courses/css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'courses/css/styles.css' %}"  media="screen,projection"/>
+
+    <title>Comments</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="/comments/{{course.id}}/add" class="section" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <h1>Add a New Comment</h1>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <textarea name="comment" id="comment" class="materialize-textarea"></textarea>
+                    <label for="comment">New Comment:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8 offset-s2 center-align">
+                    <input type="submit" value="Add" class="btn-large">
+                </div>
+            </div>
+        </form>
+
+        <div class="section">
+            <div class="row center-align">
+                <a href="/">Go back to Courses</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <h1>All comments</h1>
+            </div>
+
+            {% if course.comments_set.all %}
+                {% for comment in course.comments_set.all %}
+                    <p>{{comment.comment}} {{ comment.created_at}}</p>
+                {% endfor %}
+            {% else %}
+                <p>No comments. Be the first!</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{% static 'courses/js/jquery.min.js' %}"></script>
+    <script src="{% static 'courses/js/materialize.min.js' %}"></script>
+    <script src="{% static 'courses/js/script.js' %}"></script>
+</body>
+</html>

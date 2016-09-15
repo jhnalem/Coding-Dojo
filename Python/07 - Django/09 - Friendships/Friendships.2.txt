@@ -1,0 +1,31 @@
+# 1)Starting with Friendships, show all of the user and friend first and last names on your index.html page. (Oh… did we forget to tell you that you can just loop through and get the user.first_name directly on the index.html page?) maybe something like {{friendship.user.first_name}}
+    friendships = Friendships.objects.all()
+    {% for friendship in friendships  %}
+        {{friendship.user.first_name}} {{friendship.user.last_name}}
+    {% endfor %}
+
+# 2) Print all of the friend’s first and last names associated with user__first_name = ‘Michael’ on your index.html page.
+    friendships = Friendships.objects.filter(user__first_name="Michael")
+
+# 3) Print all of the friend’s first names who Daniel is not friends with on your index.html page.
+    friendships = Friendships.objects.exclude(user__first_name="Daniel")
+
+# 4) Print all of the friend’s who are friends with both User with the id of 1 and with Users with the last name Hernandez.
+    friendships = Friendships.objects.filter(user__id=1) | Friendships.objects.filter(user__last_name="Hernandez")
+    {% for friendship in friendships  %}
+        <p>{{friendship.friend.first_name}} {{friendship.friend.last_name}}</p>
+    {% endfor %}
+
+# 5) Order these by friend first_name and print them on your index.html page. (Note the double output of Daniel Moore!). Try adding .distinct(), and make sure to still print the query on your terminal. Which column is distinct?
+# Adding distinct only removes duplicate rows. Since there are no duplicate rows, nothing changes.
+
+# 6)
+
+
+# 7)
+
+
+# 8)
+    users = Users.objects.filter(usersfriend__friend__id=1) |  Users.objects.filter(usersfriend__friend__last_name="Hernandez")
+    users = users.distinct()
+

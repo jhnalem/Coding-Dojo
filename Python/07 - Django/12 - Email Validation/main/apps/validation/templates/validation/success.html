@@ -1,0 +1,72 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'validation/css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'validation/css/styles.css' %}"  media="screen,projection"/>
+
+    <title>Email Validation</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="section">
+            <h1>Email Addresses Entered:</h1>
+
+            {% if messages %}
+                {% for message in messages %}
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.INFO %}
+                    <div class="section center-align white-text blue-grey darken-2">
+                        <p class="{{ message.tags }}">{{message}}</p>
+                    </div>
+                    {% endif %}
+
+                    {% if message.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
+                    <div class="section center-align white-text green darken-2">
+                        <p class="{{ message.tags }}">{{message}}</p>
+                    </div>
+                    {% endif %}
+                {% endfor %}
+            {% endif %}
+
+            {% if emails %}
+                <h2>Email Addresses</h2>
+                {% for email in emails %}
+                    <div class="row">
+                        <div class="col s6">
+                            <span>{{ email.email }}</span>
+                        </div>
+
+                        <div class="col s4">
+                            <span>{{ email.created_at }}</span>
+                        </div>
+
+                        <div class="col s2">
+                            <a href="/remove/{{ email.id }}">Remove</a>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            {% else %}
+                <div class="row">
+                    <h4 class="center-align">No emails found.</h4>
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="section">
+            <div class="row center-align">
+                <a href="/">Add Another</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'validation/js/jquery.min.js' %}"></script>
+    <script src="{% static 'validation/js/materialize.min.js' %}"></script>
+    <script src="{% static 'validation/js/script.js' %}"></script>
+</body>
+</html>

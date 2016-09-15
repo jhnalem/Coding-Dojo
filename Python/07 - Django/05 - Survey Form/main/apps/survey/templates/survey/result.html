@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'survey/css/materialize.min.css' %}"  media="screen,projection"/>
+
+    <title>Survey Result</title>
+</head>
+<body>
+    <div class="container">
+        {% if messages %}
+            <div class="section center-align white-text green darken-2">
+            {% for message in messages %}
+                <p>{{message}}</p>
+            {% endfor %}
+            </div>
+        {% endif %}
+        <div class="row center-align">
+            <h1>Survey Results</h1>
+        </div>
+
+        <div class="row">
+            <div class="col s6 right-align">
+                <p>Name:</p>
+            </div>
+
+            <div class="col s6">
+                <p>{{ request.session.data.name }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 right-align">
+                <p>Dojo Location:</p>
+            </div>
+
+            <div class="col s6">
+                <p>{{ request.session.data.loca }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 right-align">
+                <p>Favorite Language:</p>
+            </div>
+
+            <div class="col s6">
+                <p>{{ request.session.data.lang }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s6 right-align">
+                <p>Comment:</p>
+            </div>
+
+            <div class="col s6">
+                <p>{{ request.session.data.comm }}</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12 center-align">
+                <a href="/">Return to form</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="{% static 'survey/js/jquery.min.js' %}"></script>
+    <script src="{% static 'survey/js/materialize.min.js' %}"></script>
+    <script src="{% static 'survey/js/script.js' %}"></script>
+</body>
+</body>
+</html>

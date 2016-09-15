@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'gold/css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'gold/css/styles.css' %}"  media="screen,projection"/>
+
+    <title>Ninja Gold | Django</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <h4 class="col s4">Your Gold: <strong>{{ request.session.gold }}</strong></h4>
+            <div class="col s8 right-align"><a href="/reset" class="btn">Reset</a></div>
+        </div>
+
+        <div class="section">
+            <div class="row center-align">
+                <form action="/process_money" class="choice col s3" method="post">
+                    {% csrf_token %}
+                    <h1>Farm</h1>
+                    <p class="center-align">(earns 10-20 golds)</p>
+                    <input type="hidden" value="farm" name="choice">
+                    <button class="btn">Find Gold!</button>
+                </form>
+
+                <form action="/process_money" class="choice col s3" method="post">
+                    {% csrf_token %}
+                    <h1>Cave</h1>
+                    <p class="center-align">(earns 5-10 golds)</p>
+                    <input type="hidden" value="cave" name="choice">
+                    <button class="btn">Find Gold!</button>
+                </form>
+
+                <form action="/process_money" class="choice col s3" method="post">
+                    {% csrf_token %}
+                    <h1>House</h1>
+                    <p class="center-align">(earns 2-5 golds)</p>
+                    <input type="hidden" value="house" name="choice">
+                    <button class="btn">Find Gold!</button>
+                </form>
+
+                <form action="/process_money" class="choice col s3" method="post">
+                    {% csrf_token %}
+                    <h1>Casino</h1>
+                    <p class="center-align">(earns 0-50 golds)</p>
+                    <input type="hidden" value="casino" name="choice">
+                    <button class="btn">Find Gold!</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                <label for="activities">Activities:</label>
+                <textarea id="activities" class="materialize-textarea" disabled>{{ request.session.activities}}</textarea>
+            </div>
+        </div>
+
+        <div class="row">
+            <form action="/reset" method="post" class="center-align">
+                <button class="btn-large">Start over!</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'gold/js/jquery.min.js' %}"></script>
+    <script src="{% static 'gold/js/materialize.min.js' %}"></script>
+    <script src="{% static 'gold/js/script.js' %}"></script>
+</body>
+</html>

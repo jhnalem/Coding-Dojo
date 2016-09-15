@@ -1,0 +1,50 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'validation/css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'validation/css/styles.css' %}"  media="screen,projection"/>
+
+    <title>Email Validation</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="center-align">Enter an email address</h1>
+
+        {% if messages %}
+            <div class="section center-align white-text red darken-2">
+            {% for message in messages %}
+                {% if message.level == DEFAULT_MESSAGE_LEVELS.ERROR %}
+                <p>{{message}}</p>
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endif %}
+
+        <form action="/process" class="section" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <div class="input-field col s6 offset-s3">
+                    <input type="email" name="email" id="email">
+                    <label for="email">Email Address:</label>
+                </div>
+            </div>
+
+            <div class="row right-align">
+                <div class="input-field col s6 offset-s3">
+                    <button class="btn-large">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <script src="{% static 'validation/js/jquery.min.js' %}"></script>
+    <script src="{% static 'validation/js/materialize.min.js' %}"></script>
+    <script src="{% static 'validation/js/script.js' %}"></script>
+</body>
+</html>
