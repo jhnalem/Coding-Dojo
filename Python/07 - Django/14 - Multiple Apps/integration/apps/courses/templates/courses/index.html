@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load staticfiles %}
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'courses/css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'courses/css/styles.css' %}"  media="screen,projection"/>
+
+    <title>Courses</title>
+</head>
+
+<body>
+    <div class="container">
+        <form action="add" class="section" method="post">
+            {% csrf_token %}
+            <div class="row">
+                <h1>Add a New Course</h1>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <input type="text" id="name" name="name">
+                    <label for="name">Name:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8 offset-s2">
+                    <textarea name="desc" id="desc" class="materialize-textarea"></textarea>
+                    <label for="desc">Description:</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s8 offset-s2 center-align">
+                    <input type="submit" value="Add" class="btn-large">
+                </div>
+            </div>
+        </form>
+
+        <div class="section">
+            <div class="row">
+                <h1>Courses</h1>
+                <a href="{% url 'courses:user_course' %}">Enroll</a>
+            </div>
+
+            {% if courses %}
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Course Name</th>
+                            <th>Description</th>
+                            <th>Date Added</th>
+                            <th colspan="2">Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        {% for course in courses %}
+                            <tr>
+                                <td>{{ course.title }}</td>
+                                <td>{{ course.description }}</td>
+                                <td>{{ course.created_at }}</td>
+                                <td><a href="{% url 'courses:comment' id=course.id %}">Comment</a></td>
+                                <td><a href="{% url 'courses:remove' id=course.id %}">Remove</a></td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+            {% else %}
+                <p>No courses added.</p>
+            {% endif %}
+        </div>
+    </div>
+
+    <script src="{% static 'courses/js/jquery.min.js' %}"></script>
+    <script src="{% static 'courses/js/materialize.min.js' %}"></script>
+    <script src="{% static 'courses/js/script.js' %}"></script>
+</body>
+</html>

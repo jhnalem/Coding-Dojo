@@ -1,0 +1,22 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="{% static 'routes/css/materialize.min.css' %}"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{% static 'routes/css/styles.css' %}"  media="screen,projection"/>
+
+    <title>Products</title>
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+
+    <script src="{% static 'routes/js/jquery.min.js' %}"></script>
+    <script src="{% static 'routes/js/materialize.min.js' %}"></script>
+    <script src="{% static 'routes/js/script.js' %}"></script>
+</body>
+</html>
