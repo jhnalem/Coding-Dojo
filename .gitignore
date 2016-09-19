@@ -6,6 +6,7 @@
 *.exe
 *.o
 *.so
+*.py[co]
 
 # Packages #
 ############
@@ -25,6 +26,7 @@
 *.log
 *.sql
 *.sqlite
+db.sqlite3
 
 # OS generated files #
 ######################
