@@ -1,0 +1,75 @@
+{% extends "./base.html" %}
+{% block content %}
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="col s7">
+                <h3>{{ book.title }}</h3>
+                <h5>{{ book.author.name }}</h5>
+            </div>
+
+            <div class="col s1">
+                <a href="{% url 'books:index' %}">Home</a>
+            </div>
+
+            <div class="col s1">
+                <a href="{% url 'account:logout' %}">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="row">
+            <div class="col s12 l6">
+                <h5>Reviews</h5>
+                <div class="divider"></div>
+
+                {% for review in reviews %}
+                    <div class="row">
+                        <p class="rating">Rating: {{ review.rating }}</p>
+
+                        <p class="text">
+                            <a href="{% url 'account:account' id=review.user.id %}">{{ review.user.first_name }}</a> says: {{review.text}}
+                        </p>
+
+                        <p class="date">Posted on: {{review.created_at}}</p>
+
+                        {% if review.user.id == request.session.user_id %}
+                            <a href="{% url 'books:destroy_review' id=review.id %}">Delete this review</a>
+                        {% endif %}
+                    </div>
+
+                    <div class="divider"></div>
+                {% empty %}
+                    <div class="row">
+                        <p>No Reviews</p>
+                    </div>
+                {% endfor %}
+            </div>
+
+            <form action="{% url 'books:create_review' id=book.id %}" class="col s12 l5 offset-l1" method="post">
+                {% csrf_token %}
+                <div class="input-field row">
+                    <textarea name="text" id="text" class="materialize-textarea"></textarea>
+                    <label for="text">Add a review:</label>
+                </div>
+
+                <div class="input-field row">
+                    <select name="rating" id="rating">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                    <label for="rating">Rating</label>
+                </div>
+
+                <div class="row input-field right-align">
+                    <input type="submit" value="Submit Review" class="btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

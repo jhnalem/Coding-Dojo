@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    {% include './layout/styles.html' %}
+    <link type="text/css" rel="stylesheet" href="{% static 'css/styles.css' %}"  media="screen,projection"/>
+
+    <title>{{ title }}</title>
+</head>
+
+<body>
+    {% block content %}{% endblock %}
+
+    {% include './layout/scripts.html' %}
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+</html>

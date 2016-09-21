@@ -1,0 +1,60 @@
+{% extends "./base.html" %}
+{% block content %}
+<div class="container">
+    <div class="section">
+        <div class="row right-align">
+            <div class="col s1 offset-s10">
+                <a href="{% url 'books:index' %}">Home</a>
+            </div>
+
+            <div class="col s1">
+                <a href="{% url 'account:logout' %}">Logout</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3>Add a new Book Title and a Review</h3>
+
+        <form action="{% url 'books:create_book' %}" class="" method="post">
+            {% csrf_token %}
+            <div class="row input-field">
+                <input type="text" name="title" id="title">
+                <label for="title">Book Title:</label>
+            </div>
+
+            <div class="row input-field">
+                <select name="author-select" id="author-select">
+                    <option value="" disabled selected>Choose an author</option>
+                    {% for author in authors %}
+                        <option value="{{author.id}}">{{author.name}}</option>
+                    {% endfor %}
+                </select>
+
+                <input type="text" name="author-input" id="author-field">
+                <label for="authod-input">Add a new Author</label>
+            </div>
+
+            <div class="row input-field">
+                <textarea name="review" id="review" class="materialize-textarea"></textarea>
+                <label for="review">Review:</label>
+            </div>
+
+            <div class="row input-field">
+                <select name="rating" id="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+                <label for="rating">Rating</label>
+            </div>
+
+            <div class="row input-field right-align">
+                <input type="submit" value="Add Book and Review" class="btn">
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}
