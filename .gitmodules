@@ -1,0 +1,3 @@
+[submodule "Python/07 - Django/django_modules"]
+	path = Python/07 - Django/django_modules
+	url = git@github.com:christiankwon/django_modules.git
