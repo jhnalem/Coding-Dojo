@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock %}
+
+
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{% static 'account/css/styles.css' %}"  media="screen,projection"/>
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static 'account/js/script.js' %}"></script>
+{% endblock %}
+
+
+{% block header %}
+    <nav class="blue" role="navigation">
+        <div class="nav-wrapper row">
+            <a href="{% url 'root:index' %}" class="col s2 center-align">Test App</a>
+
+            {% if request.session.user_id %}
+                <a href="{% url 'root:logout' %}" class="col s2 offset-s8 center-align">Sign Out</a>
+            {% else %}
+                <a href="{% url 'root:login' %}" class="col s2 offset-s8 center-align">Sign In</a>
+            {% endif %}
+        </div>
+    </nav>
+{% endblock %}
+
+
+{% block content %}
+    <section>
+        <h1 class="center-align">Welcome to the test</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae, hic fugiat nisi ea qui? Qui cumque doloribus nulla ullam tenetur magnam accusamus ut alias minus eos, dignissimos quasi nostrum voluptas.</p>
+        <div class="center-align">
+            {% if request.session.user_id %}
+                <a href="{% url 'dashboard:index' %}" class="btn blue">Start</a>
+            {% else %}
+                <a href="{% url 'root:login' %}" class="btn blue">Start</a>
+            {% endif %}
+        </div>
+    </section>
+
+    <div class="section">
+        <div class="row">
+            <div class="col s12 m4">
+                <h4 class="center-align">Manage Users</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptate similique consectetur veritatis sapiente possimus nihil inventore natus dolores blanditiis porro in enim ipsa molestias fuga, culpa accusamus, at architecto.</p>
+            </div>
+            <div class="col s12 m4">
+                <h4 class="center-align">Leave messages</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sequi dignissimos soluta ut laudantium quam beatae nemo? Praesentium magnam harum laudantium tempore. Sint provident, cumque reprehenderit asperiores molestias. Mollitia minima, sit.</p>
+            </div>
+            <div class="col s12 m4">
+                <h4 class="center-align">Edit User Information</h4>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae eligendi debitis obcaecati blanditiis labore laborum illum eius, tempore officia dicta sed aspernatur inventore, quod a optio minima nisi ducimus ut.</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}

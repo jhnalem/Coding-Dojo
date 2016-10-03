@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Home Page</title>
+{% endblock %}
+
+
+{% block styles %}
+    <link type="text/css" rel="stylesheet" href="{% static 'account/css/styles.css' %}"  media="screen,projection"/>
+{% endblock %}
+
+
+{% block scripts %}
+    <script src="{% static 'account/js/script.js' %}"></script>
+{% endblock %}
+
+
+{% block header %}
+    <nav class="blue" role="navigation">
+        <div class="nav-wrapper row">
+            <a href="{% url 'root:index' %}" class="col s2 center-align">Test App</a>
+            <a href="{% url 'root:login' %}" class="col s2 offset-s8 center-align">Sign In</a>
+        </div>
+    </nav>
+{% endblock %}
+
+
+{% block content %}
+    <section>
+        {% include './forms/login.html' with desc="Sign In" %}
+
+        <div class="center-align">
+            <a href="{% url 'root:register' %}">Don't have an account? Register!</a>
+        </div>
+    </section>
+{% endblock %}
+
+
+{% block footer %}
+
+{% endblock %}
