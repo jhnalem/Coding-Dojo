@@ -1,3 +1,12 @@
 [submodule "Python/07 - Django/django_modules"]
 	path = Python/07 - Django/django_modules
 	url = git@github.com:christiankwon/django_modules.git
+[submodule "Python/07 - Django/projects/ninjapool"]
+	path = Python/07 - Django/projects/ninjapool
+	url = git@github.com:christiankwon/ninjapool.git
+[submodule "Python/07 - Django/projects/storyteller"]
+	path = Python/07 - Django/projects/storyteller
+	url = git@github.com:christiankwon/storyteller.git
+[submodule "Belt Exams/Python/python_belt"]
+	path = Belt Exams/Python/python_belt
+	url = git@github.com:christiankwon/python_belt.git

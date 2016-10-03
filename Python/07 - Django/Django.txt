@@ -1,0 +1,45 @@
+Make a Django App
+    (django) $ django-admin startproject <<main>>
+    (django) $ cd <<main>>
+    (django) $ mkdir apps
+    (django) $ cd apps
+    (django) $ nul> __init__.py
+    (django) $ python ../manage.py startapp <<app>>
+
+Starting App
+    main/main/settings.py >
+        Add <<app>> to INSTALLED_APPS
+
+    main/main/urls.py >
+        - Add include to import
+        - Update urlpatterns with url(r'^', include('apps.<<app>>.urls')),
+
+    main/apps/<<app>>/urls.py > Make this file
+        from django.conf.urls import url
+        from . import views
+        from .models import <<Class>>
+
+        urlpatterns = [
+            url(r'^$', views.<<route>>),
+        ]
+
+    main/apps/<<app>>/views.py > Create routes
+        def index(request):
+            data = {
+                'key': value
+            }
+            return render(request, '<<app>>/<<route>>.html', data)
+
+    main/apps/<<app>>/templates/<<app>>/<<route>>.html > Make templates
+
+# main is the folder manage.py is in
+Setting up Session
+    main $ python manage.py makemigrations
+    main $ python manage.py migrate
+
+Running the Server
+    main $ python manage.py runserver
+
+For Models
+    class <<Class>>:
+
