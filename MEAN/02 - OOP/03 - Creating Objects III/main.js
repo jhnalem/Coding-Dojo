@@ -1,44 +1,57 @@
 (function() {
     'use strict';
 
-    var Vehicle = function(name, wheels, passengers, speed) {
-        var distance_travelled = 0;
-        var updateDistanceTravelled = function() {
-            distance_travelled += this.speed;
-        };
+    let map = new WeakMap();
+    let internal = function(obj) {
+        if( !map.has(obj) ) {
+            map.set(obj, {});
+        }
+        return map.get(obj);
+    }
 
-        this.name = name;
-        this.wheels = wheels;
-        this.passengers = passengers || 4;
-        this.speed = speed;
+    class Vehicle {
+        constructor(name, wheels, passengers, speed) {
+            this.name = name || 'unicycle';
+            this.wheels = wheels || 2;
+            this.passengers = passengers || 1;
+            this.speed = speed;
+            this.vin = (function() {
+                var chars = "0123456789ABCEDGHIJKLMNOPQRSTUVWXYZ";
 
-        this.move = function() {
-            updateDistanceTravelled.call(this);
+                var vin = '';
+                for (var i = 0; i < 17; i+=1 ){
+                    // Use Math.floor and Math.random to generate random index to access character from char string
+                    vin += chars[Math.floor(Math.random()*35)];
+                }
+
+                return vin;
+            })();
+
+            internal(this).distance_travelled  = 0;
+            internal(this).updateDistanceTravelled = function() {
+                internal(this).distance_travelled += this.speed;
+            };
+        }
+
+        move() {
+            internal(this).updateDistanceTravelled.call(this);
             this.makeNoise();
 
             return this;
-        };
+        }
 
-        this.checkMiles = function() {
-            console.log(distance_travelled);
+        checkMiles() {
+            console.log(internal(this).distance_travelled);
 
             return this;
-        };
+        }
 
-        this.vin = (function() {
-            var max = 99999999999999999,
-                min = 10000000000000000;
+        makeNoise(noise) {
+            console.log(noise || "Vroom!");
 
-            return Math.floor(Math.random()*(max-min+1)+min);
-        })();
-    };
-
-    Vehicle.prototype.makeNoise = function(noise) {
-        console.log(noise || "Vroom!");
-
-        return this;
-    };
-
+            return this;
+        }
+    }
 
     class Bike extends Vehicle {
         makeNoise() {
