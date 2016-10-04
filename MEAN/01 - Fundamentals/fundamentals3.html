@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fundamentals 3</title>
+</head>
+<body>
+    <script>
+        var Ninja = function(name, cohort, belt) {
+            this.name = name || 'Ninja';
+            this.cohort = cohort || '';
+            this.belt = belt || 'yellow';
+            this.levelUp = function() {
+                var belts = ['yellow', 'orange', 'red', 'black'];
+                var newBelt = belts.indexOf(this.belt) + 1;
+
+                this.belt = belts[belts[newBelt] ? newBelt : belts.length - 1];
+            };
+        }
+    </script>
+</body>
+</html>

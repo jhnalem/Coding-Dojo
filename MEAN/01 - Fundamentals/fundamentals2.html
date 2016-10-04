@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fundamentals 2</title>
+</head>
+<body>
+    <script>
+        var sum = function(x, y) {
+            sum = 0;
+
+            for( var i = x; i <= y; i++ ) {
+                sum += i;
+            }
+
+            console.log(sum);
+            return sum;
+        }
+
+        var min = function(arr) {
+            var min = arr[0];
+
+            for( var i = 1; i < arr.length; i++ ) {
+                if( arr[i] < min ) {
+                    min = arr[i];
+                }
+            }
+
+            console.log(min);
+            return min;
+        }
+
+        var avg = function(arr) {
+            var sum = 0;
+
+            for( var i = 0; i < arr.length; i++ ) {
+                sum += arr[i];
+            }
+
+            var avg = sum / arr.length;
+
+            console.log(avg);
+            return avg;
+        }
+
+        var funcs = {
+            sum: sum,
+            min: min,
+            avg: avg
+        };
+
+        var Person = function(name, dist) {
+            this.name = name;
+            this.distance_traveled = dist || 0;
+            this.say_name = function() {
+
+                return this.name;
+            };
+            this.say_something = function(param) {
+
+                return this.name + ' says: ' + param;
+            };
+            this.walk = function() {
+                alert(this.name + ' is walking!');
+                this.distance_traveled += 3;
+            };
+            this.run = function() {
+                alert(this.name + ' is running!');
+                this.distance_traveled += 10;
+            };
+            this.crawl = function() {
+                alert(this.name + ' is crawling!');
+                this.distance_traveled += 1;
+            };
+        };
+    </script>
+</body>
+</html>
