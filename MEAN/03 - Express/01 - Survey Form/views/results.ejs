@@ -3,6 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Results | Survery Form</title>
+
+    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <main>
@@ -11,10 +15,32 @@
                 <h3>Survey Results</h3>
 
                 <div class="row">
-                    .col.right-alig
+                    <div class="col right-align s5 offset s1">Name:</div>
+                    <div class="col s5"><%= name %></div>
                 </div>
+
+                <div class="row">
+                    <div class="col right-align s5 offset s1">Dojo Location:</div>
+                    <div class="col s5"><%= location %></div>
+                </div>
+
+                <div class="row">
+                    <div class="col right-align s5 offset s1">Favorite Language:</div>
+                    <div class="col s5"><%= name %></div>
+                </div>
+
+                <% if( comment ) { %>
+                <div class="row">
+                    <div class="col right-align s5 offset s1">Comment:</div>
+                    <div class="col s5"><%= comment %></div>
+                </div>
+                <% } %>
             </div>
         </div>
     </main>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
