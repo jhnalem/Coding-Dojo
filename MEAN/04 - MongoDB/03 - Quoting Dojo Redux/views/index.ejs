@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quoting Dojo Redux</title>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <h1 class="center-align">Welcome to QuotingDojo</h1>
+                </div>
+
+                <form action="/quotes" method="post">
+                    <div class="row">
+                        <div class="input-field col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+                            <input type="text" name="name" id="name">
+                            <label for="name">Your Name:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+                            <textarea name="quote" id="quote" class="materialize-textarea"></textarea>
+                            <label for="quote">Your Quote:</label>
+                        </div>
+                    </div>
+
+                    <div class="row center-align">
+                        <div class="col s6">
+                            <input type="submit" class="btn" value="Add my quote!">
+                        </div>
+
+                        <div class="col s6">
+                            <a href="/quotes" class="btn grey" >Skip to quotes!</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/materialize/dist/js/materialize.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

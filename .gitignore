@@ -38,6 +38,7 @@ db.sqlite3
 ehthumbs.db
 Thumbs.db
 
+bower_components/
 node_modules/
 .sync/
 .git/

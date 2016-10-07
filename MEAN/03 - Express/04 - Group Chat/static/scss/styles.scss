@@ -1,0 +1,19 @@
+html,
+body,
+main {
+    height: 100%;
+
+}
+
+#username {
+    height: 100%;
+
+    .section.valign {
+        margin: 0 auto;
+    }
+}
+
+#chat-wrapper {
+    display: none;
+    padding: 25px;
+}

@@ -1,7 +1,7 @@
 var gulp         = require('gulp');
 var sass         = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
-// var sourcemaps   = require('gulp-sourcemaps');
+var sourcemaps   = require('gulp-sourcemaps');
 var browserSync  = require('browser-sync').create();
 var runSequence  = require('run-sequence');
 var plumber      = require('gulp-plumber');
@@ -23,10 +23,14 @@ gulp.task('nodemon', function(cb) {
 
 gulp.task('browserSync', ['nodemon'], function() {
     browserSync.init({
-        proxy: "localhost:8000",
+        proxy: {
+            target: "localhost:8000",
+            ws: true
+        },
         port: 3000,
         open: false,
-        notify: false
+        notify: false,
+        ghostMode: false
     });
 });
 
@@ -38,12 +42,12 @@ gulp.task('sass', function() {
             this.emit('end');
         }
     }))
-    // .pipe(sourcemaps.init())
+    .pipe(sourcemaps.init())
     .pipe(sass({
         outputStyle: 'expanded'
     }))
     .pipe(autoprefixer())
-    // .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest('static/css'))
     .pipe(browserSync.reload({
         stream: true

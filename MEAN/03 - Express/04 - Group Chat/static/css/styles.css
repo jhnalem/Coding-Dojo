@@ -1,0 +1,20 @@
+html,
+body,
+main {
+  height: 100%;
+}
+
+#username {
+  height: 100%;
+}
+
+#username .section.valign {
+  margin: 0 auto;
+}
+
+#chat-wrapper {
+  display: none;
+  padding: 25px;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInN0eWxlcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBOzs7RUFHSSxhQUFhO0NBRWhCOztBQUVEO0VBQ0ksYUFBYTtDQUtoQjs7QUFORDtFQUlRLGVBQWU7Q0FDbEI7O0FBR0w7RUFDSSxjQUFjO0VBQ2QsY0FBYztDQUNqQiIsImZpbGUiOiJzdHlsZXMuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiaHRtbCxcclxuYm9keSxcclxubWFpbiB7XHJcbiAgICBoZWlnaHQ6IDEwMCU7XHJcblxyXG59XHJcblxyXG4jdXNlcm5hbWUge1xyXG4gICAgaGVpZ2h0OiAxMDAlO1xyXG5cclxuICAgIC5zZWN0aW9uLnZhbGlnbiB7XHJcbiAgICAgICAgbWFyZ2luOiAwIGF1dG87XHJcbiAgICB9XHJcbn1cclxuXHJcbiNjaGF0LXdyYXBwZXIge1xyXG4gICAgZGlzcGxheTogbm9uZTtcclxuICAgIHBhZGRpbmc6IDI1cHg7XHJcbn1cclxuIl0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9 */

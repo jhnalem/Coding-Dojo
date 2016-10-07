@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quoting Dojo Redux</title>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <h1 class="center-align">Here are the awesome quotes!</h1>
+                </div>
+
+                <div class="quotes">
+                    <% for( var quote in quotes ) { %>
+                        <% var q = quotes[quote] %>
+                        <div class="row">
+                            <div class="divider"></div>
+
+                            <p>Likes: <%= q.likes %><a href="/quotes/<%= q._id %>/like">Like!</a></p>
+                            <p>"<%= q.text %>"</p>
+                            <p>- <%= q.author %> at <%= q.createdAt %></p>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/materialize/dist/js/materialize.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dojo Message Board</title>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <h1 class="center-align">The Message Board</h1>
+                </div>
+
+                <div class="row">
+                    <form action="/postMessage" method="post">
+                        <div class="input-field col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+                            <input type="text" name="name" id="name">
+                            <label for="name">Name:</label>
+                        </div>
+
+                        <div class="input-field col s10 m8 l6 offset-s1 offset-m2 offset-l3">
+                            <textarea name="message" id="message" class="materialize-textarea"></textarea>
+                            <label for="message">Message:</label>
+                        </div>
+
+                        <div class="col s12 center-align">
+                            <input type="submit" value="Post Message" class="btn green">
+                        </div>
+                    </form>
+                </div>
+
+                <div class="messages">
+                    <% for( var m in messages ) { %>
+                        <% var message = messages[m]; %>
+                        <div class="row">
+                            <h4>Name: <%= message.author %></h4>
+                            <h5>Message: <%= message.text %></h5>
+
+                            <div class="col s12 m10 offset-m2">
+                                <% for( var i = 0; i < message.comments.length; i++ ) { %>
+                                    <% var comment = message.comments[i]; %>
+                                    <div class="row">
+                                        <p>Name: <%= comment.author %></p>
+                                        <p>Comment: <%= comment.text %></p>
+                                    </div>
+                                <% } %>
+                                <form action="/postComment/<%= message._id %>" method="post">
+                                    <div class="input-field col s12">
+                                        <input type="text" name="name" id="name_<%= message._id %>">
+                                        <label for="name_<%= message._id %>">Name:</label>
+                                    </div>
+
+                                    <div class="input-field col s12">
+                                        <textarea name="message" id="message_<%= message._id %>" class="materialize-textarea"></textarea>
+                                        <label for="message_<%= message._id %>">Comment:</label>
+                                    </div>
+
+                                    <div class="col s12 right-align">
+                                        <input type="submit" value="Post Comment" class="btn blue-grey">
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    <% } %>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/materialize/dist/js/materialize.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

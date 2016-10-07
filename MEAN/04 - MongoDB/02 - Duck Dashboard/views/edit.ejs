@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit | Duck Dashboard</title>
+
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <h1 class="center-align">Edit Duck</h1>
+                </div>
+
+                <form action="/ducks/<%= duck._id %>" method="post">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="id" id="id" value="<%= duck._id %>" readonly="readonly">
+                            <label for="id">ID:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="name" id="name" value="<%= duck.name %>">
+                            <label for="name">Name:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="color" id="color" value="<%= duck.color %>">
+                            <label for="color">Color:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="createdAt" id="createdAt" value="<%= duck.createdAt %>" readonly="readonly">
+                            <label for="createdAt">Created At:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input type="text" name="updatedAt" id="updatedAt" value="<%= duck.updatedAt %>" readonly="readonly">
+                            <label for="updatedAt">Updated At:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s12 center-align">
+                            <input type="submit" class="btn" value="Update">
+                        </div>
+                    </div>
+                </form>
+
+                <div class="row center-align">
+                    <div class="col s6">
+                        <a href="/" class="btn">Home</a>
+                    </div>
+
+                    <div class="col s6">
+                        <a href="/ducks/<%= duck.id %>" class="btn">View</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="/bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

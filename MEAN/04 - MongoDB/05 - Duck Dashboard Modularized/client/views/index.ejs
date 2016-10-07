@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Duck Dashboard</title>
+
+    <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <h1 class="center-align">Duck Dashboard</h1>
+                </div>
+
+                <div class="row">
+                    <a href="/ducks/new" class="btn right">Add New Duck</a>
+                </div>
+
+                <div class="row">
+                    <table class="bordered">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Color</th>
+                                <th>View</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <% for( var i = 0; i < ducks.length; i++ ) { %>
+                                <% var duck = ducks[i]; %>
+                                <tr>
+                                    <td><%= duck.name %></td>
+                                    <td><%= duck.color %></td>
+                                    <td><a href="/ducks/<%= duck.id %>">View</a></td>
+                                    <td><a href="/ducks/<%= duck.id %>/edit">Edit</a></td>
+                                    <td><a href="/ducks/<%= duck.id %>/destroy">Remove</a></td>
+                                </tr>
+                            <% } %>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/materialize/dist/js/materialize.min.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

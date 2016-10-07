@@ -1,0 +1,30 @@
+{
+  "name": "message-board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.1",
+    "gulp-sass": "^2.3.2",
+    "autoprefixer": "^6.4.0"
+  },
+  "devDependencies": {
+    "body-parser": "^1.15.2",
+    "browser-sync": "^2.15.0",
+    "ejs": "^2.5.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "mongoose": "^4.6.3",
+    "run-sequence": "^1.2.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Christian Kwon <christiankwon@outlook.com>",
+  "license": "MIT"
+}
