@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Controlling Users</title>
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="app" ng-cloak>
+    <main ng-controller="userController">
+        <div class="container">
+            <div class="section">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="fname" id="fname" ng-model="form.fname">
+                        <label for="fname">First Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="lname" id="lname" ng-model="form.lname">
+                        <label for="lname">Last Name</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" name="language" id="language" ng-model="form.language">
+                        <label for="language">Favorite Language</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 right-align">
+                        <button class="btn" ng-click="createUser(form)">Add User</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <div class="row">
+                    <div class="input-field col s4">
+                        <input type="text" name="search_fname" id="search_fname" ng-model="search.first_name">
+                        <label for="search_fname">Search First Names</label>
+                    </div>
+
+                    <div class="input-field col s4">
+                        <input type="text" name="search_lname" id="search_lname" ng-model="search.last_name">
+                        <label for="search_lname">Search Last Names</label>
+                    </div>
+
+                    <div class="input-field col s4">
+                        <input type="text" name="search_language" id="search_language" ng-model="search.favorite_language">
+                        <label for="search_language">Search Favorite Languages</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <table>
+                    <thead>
+                        <tr>
+                            <th ng-click="sortBy('first_name')" ng-class="{reverse: reverse}">
+                                First Name<span class="sortorder" ng-show="propertyName === 'first_name'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th ng-click="sortBy('last_name')" ng-class="{reverse: reverse}">
+                                Last Name<span class="sortorder" ng-show="propertyName === 'last_name'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th ng-click="sortBy('favorite_language')" ng-class="{reverse: reverse}">
+                                Favorite Language<span class="sortorder" ng-show="propertyName === 'favorite_language'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th ng-click="sortBy('created_at')" ng-class="{reverse: reverse}">Created At<span class="sortorder" ng-show="propertyName === 'created_at'" ng-class="{reverse: reverse}"></span></th>
+
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="user in users | orderBy:propertyName:reverse | filter:search">
+                            <td>{{user.first_name}}</td>
+                            <td>{{user.last_name}}</td>
+                            <td>{{user.favorite_language}}</td>
+                            <td>{{user.created_at}}</td>
+                            <td><button class="btn" ng-click="deleteUser(user)">Delete User</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src='bower_components/angular/angular.js'></script>
+    <script src="script.js"></script>
+</body>
+</html>

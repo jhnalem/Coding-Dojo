@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body ng-app="app">
+    <main ng-controller="controller">
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="input-field col s12 m8">
+                        <h4>Add Food</h4>
+
+                        <div class="input-field">
+                            <input type="text" name="food" id="food" ng-model="food">
+                            <label for="food">Favorite Food</label>
+                            <button class="btn" ng-click="addFood(food)">Add Food</button>
+                        </div>
+                        <p ng-if="food">Currently Typing: {{food}}</p>
+                    </div>
+
+                    <div class="input-field col s12 m4">
+                        <h4>Food List</h4>
+                        <div class="input-field">
+                            <input type="text" name="filter" id="filter" ng-model="filterFood"><label for="filter">Filter</label>
+                        </div>
+                        <p ng-repeat="foodItem in foodList | filter:filterFood">{{foodItem}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

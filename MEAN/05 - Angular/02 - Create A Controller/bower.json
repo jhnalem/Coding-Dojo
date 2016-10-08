@@ -1,0 +1,22 @@
+{
+  "name": "duck-dashboard",
+  "description": "",
+  "main": "Gulpfile.js",
+  "authors": [
+    "Christian Kwon <christiankwon@outlook.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/christiankwon/Coding-Dojo",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "materialize": "^0.97.7",
+    "jquery": "^3.1.1",
+    "angular": "^1.5.8"
+  }
+}
