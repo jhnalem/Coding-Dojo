@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Controlling Users</title>
+    <link rel="stylesheet" href="bower_components/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body ng-app="app" ng-cloak>
+    <main>
+        <div class="section" ng-controller="ProductController">
+            <div class="container">
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input type="text" name="name" id="name" ng-model="form.name">
+                        <label for="name">Product Name</label>
+                    </div>
+
+                    <div class="input-field col s6">
+                        <input type="text" name="price" id="price" ng-model="form.price">
+                        <label for="price">Product Price</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s12 right-align">
+                        <button class="btn" ng-click="addProduct(form)">Add Product</button>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th ng-click="sortByName()" ng-class="{reverse: reverse}">
+                                Name<span class="sortorder" ng-show="sortColumn === 'name'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th ng-click="sortByPrice()" ng-class="{reverse: reverse}">
+                                Price<span class="sortorder" ng-show="sortColumn === 'price'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="product in products | orderBy:sortColumn:reverse track by $index">
+                            <td>{{product.name}}</td>
+                            <td>{{product.price | currency}}</td>
+                            <td><button class="btn" ng-click="removeProduct($index)">Remove</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="section" ng-controller="OrderController">
+            <div class="container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th ng-click="sortByName()" ng-class="{reverse: reverse}">
+                                Name<span class="sortorder" ng-show="sortColumn === 'name'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th ng-click="sortByPrice()" ng-class="{reverse: reverse}">
+                                Price<span class="sortorder" ng-show="sortColumn === 'price'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th ng-click="sortByName()" ng-class="{reverse: reverse}">
+                                Qty<span class="sortorder" ng-show="sortColumn === 'qty'" ng-class="{reverse: reverse}"></span>
+                            </th>
+
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr ng-repeat="product in products | orderBy:sortColumn:reverse track by $index">
+                            <td>{{product.name}}</td>
+                            <td>{{product.price | currency}}</td>
+                            <td>{{product.qty}}</td>
+                            <td><button class="btn" ng-click="buyProduct($index)">Buy</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/materialize/dist/js/materialize.min.js"></script>
+    <script src='bower_components/angular/angular.js'></script>
+    <script src="scripts/app.js"></script>
+    <!-- <script src="scripts/factories.js"></script>
+    <script src="scripts/controllers.js"></script> -->
+</body>
+</html>
