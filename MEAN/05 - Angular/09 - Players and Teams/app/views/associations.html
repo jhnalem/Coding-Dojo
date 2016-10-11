@@ -1,0 +1,45 @@
+<div class="section" ng-controller="AssociationsController">
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s5">
+                <select name="player" id="player" material-select watch ng-model="form.player">
+                    <option value="" disabled selected>Choose a player</option>
+                    <option value="{{player.name}}" ng-repeat="player in players track by $index">{{player.name}}</option>
+                </select>
+                <label for="player">Select A Player</label>
+            </div>
+
+            <div class="input-field col s5">
+                <select name="team" id="team" material-select watch ng-model="form.team">
+                    <option value="" disabled selected>Choose a team</option>
+                    <option value="{{team.name}}" ng-repeat="team in teams track by $index">{{team.name}}</option>
+                </select>
+                <label for="team">Select A Team</label>
+            </div>
+
+            <div class="col s2 center-align">
+                <button class="btn" ng-click="addAssociation(form)">Assign Player to Team</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Player</th>
+                        <th>Team</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="assoc in associations track by $index">
+                        <td>{{assoc.player}}</td>
+                        <td>{{assoc.team}}</td>
+                        <td><button class="btn" ng-click="removeAssociation($index)">Clear Association</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,25 @@
+{
+  "name": "partials-and-users",
+  "homepage": "https://github.com/christiankwon/Coding-Dojo",
+  "authors": [
+    "Christian Kwon <christiankwon@outlook.com>"
+  ],
+  "description": "",
+  "main": "Gulpfile.js",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "font-awesome": "^4.6.3",
+    "materialize": "^0.97.7",
+    "jquery": "^3.1.1",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8"
+  },
+  "private": true
+}

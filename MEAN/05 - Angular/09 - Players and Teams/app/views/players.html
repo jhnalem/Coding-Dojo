@@ -1,0 +1,32 @@
+<div class="section" ng-controller="PlayersController">
+    <div class="container">
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" name="name" id="name" ng-model="form.name">
+                <label for="name">Name</label>
+            </div>
+
+            <div class="col s12 right-align">
+                <button class="btn" ng-click="addPlayer(form)">Add Player</button>
+            </div>
+        </div>
+
+        <div class="row">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="player in players track by $index">
+                        <td>{{player.name}}</td>
+                        <td><button class="btn" ng-click="removePlayer($index)">Delete User</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

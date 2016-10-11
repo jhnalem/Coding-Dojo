@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Users and Partial Routes</title>
+
+    <link rel="stylesheet" href="materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <main ng-app="app">
+        <div class="section">
+            <div class="row">
+                <h1 class="center-align">Users!</h1>
+            </div>
+
+            <div class="row center-align">
+                <div class="col s6">
+                    <a href="/#/customizeUsers">Customize Users</a>
+                </div>
+
+                <div class="col s6">
+                    <a href="/#/userList">User List</a>
+                </div>
+            </div>
+        </div>
+        <div ng-view></div>
+    </main>
+
+    <script src="jquery/dist/jquery.min.js"></script>
+    <script src="materialize/dist/js/materialize.min.js"></script>
+    <script src="angular/angular.js"></script>
+    <script src="angular-route/angular-route.js"></script>
+    <script src="js/angular.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
