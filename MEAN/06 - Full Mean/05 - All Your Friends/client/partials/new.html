@@ -1,1 +1,25 @@
-<h1>New HTML</h1>
+<div class="section">
+    <div class="row center-align">
+        <h1>New Friend</h1>
+    </div>
+
+    <form ng-submit="create()">
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" name="fname" id="fname" ng-model="form.firstName">
+                <label for="fname">First Name</label>
+            </div>
+
+            <div class="input-field col s6">
+                <input type="text" name="lname" id="lname" ng-model="form.lastName">
+                <label for="lname">Last Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <button class="btn">Create</button>
+            </div>
+        </div>
+    </form>
+</div>

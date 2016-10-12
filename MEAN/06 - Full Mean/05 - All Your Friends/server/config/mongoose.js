@@ -7,7 +7,7 @@
 
     var modelsPath = path.join(__dirname, '../models/');
 
-    var databaseName = 'mean-friends';
+    var databaseName = 'meanFriends';
     var dbURI = 'mongodb://localhost/' + databaseName;
 
     mongoose.connect(dbURI);

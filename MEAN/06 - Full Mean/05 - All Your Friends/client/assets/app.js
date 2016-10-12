@@ -18,7 +18,7 @@
                 templateUrl: 'partials/edit.html',
                 controller: 'EditController'
             })
-            .when('/:show/edit', {
+            .when('/:id/show', {
                 templateUrl: 'partials/show.html',
                 controller: 'ShowController'
             });

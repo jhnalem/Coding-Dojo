@@ -5,14 +5,14 @@
     var Friend   = mongoose.model('Friend');
 
     module.exports = {
-        index: index,
-        create: createFriend,
-        update: updateFriend,
-        delete: deleteFriend,
-        show: showFriend
+        index: _index,
+        create: _create,
+        update: _update,
+        delete: _delete,
+        show: _show
     };
 
-    function index(request, response) {
+    function _index(request, response) {
         Friend.find({}, function(error, friends) {
             var context = {
                 error: error,
@@ -23,29 +23,47 @@
         });
     }
 
-    function createFriend(request, response) {
+    function _create(request, response) {
         var friend = new Friend(request.body);
 
         friend.save(function(error) {
-            response.json({error: error})
+            var context = {
+                error: error
+            };
+
+            response.json(context);
         });
     }
 
-    function updateFriend(request, response) {
-        Friend.findOneAndUpdate({_id: request.params.id}, {$set: {first_name: request.body.first_name, last_name:request.body.last_name}}, {new: true}, function(error, friend) {
+    function _update(request, response) {
+        var id = request.params.id;
+        var set = {
+            firstName: request.body.firstName,
+            lastName: request.body.lastName
+        };
 
-            response.json({error:error, friend:friend})
+        Friend.findByIdAndUpdate(id, {$set: set}, {new: true}, function(error, friend) {
+            var context = {
+                error: error,
+                friend: friend
+            };
+
+            response.json(context);
         });
     }
 
-    function deleteFriend(request, response) {
+    function _delete(request, response) {
         Friend.findByIdAndRemove(request.params.id, function(error, friend) {
+            var context = {
+                error: error,
+                friend: friend
+            };
 
-            response.json({error: error, friend:friend});
+            response.json(context);
         });
     }
 
-    function showFriend(request, response) {
+    function _show(request, response) {
         var id = request.params.id;
 
         Friend.findById(id, function(error, friend) {
