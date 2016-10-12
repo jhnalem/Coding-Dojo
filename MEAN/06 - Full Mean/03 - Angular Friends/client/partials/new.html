@@ -1,0 +1,19 @@
+<form action="/friends/create" class="section" method="post" ng-submit="">
+    <div class="row">
+        <div class="input-field col s6">
+            <input type="text" name="fname" id="fname" ng-model="form.fname">
+            <label for="fname">First Name</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6">
+            <input type="text" name="lname" id="lname" ng-model="form.lname">
+            <label for="lname">Last Name</label>
+        </div>
+    </div>
+
+    <div class="row">
+        <button class="btn" ng-click="edit(form)">Create</button>
+    </div>
+</form>

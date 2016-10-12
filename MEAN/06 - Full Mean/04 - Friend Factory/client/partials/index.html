@@ -1,0 +1,20 @@
+<table>
+    <thead>
+        <tr>
+            <th>Index</th>
+            <th>Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="f in friends track by $index">
+            <td>{{$index}}</td>
+            <td>{{f._id}}</td>
+            <td>{{f.first_name}}</td>
+            <td>{{f.last_name}}</td>
+            <td><a href="#/{{f._id}}/edit">Edit</a></td>
+        </tr>
+    </tbody>
+</table>
