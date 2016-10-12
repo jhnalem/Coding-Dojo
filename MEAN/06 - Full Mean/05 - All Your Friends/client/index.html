@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mean Friends</title>
+
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <main ng-app="app">
+        <div>
+            <a href="#/">Index</a>
+            <a href="#/new">New</a>
+            <!-- <a href="#/show">Show</a> -->
+            <!-- <a href="#/edit">Edit</a> -->
+        </div>
+
+        <div ng-view></div>
+    </main>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/materialize/dist/js/materialize.min.js"></script>
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-route/angular-route.js"></script>
+    <script src="/assets/app.js"></script>
+    <script src="/assets/factories/FriendsFactory.js"></script>
+    <script src="/assets/controllers/IndexController.js"></script>
+    <script src="/assets/controllers/EditController.js"></script>
+    <script src="/assets/controllers/NewController.js"></script>
+    <script src="/assets/controllers/ShowController.js"></script>
+    <script src="/js/script.js"></script>
+</body>
+</html>

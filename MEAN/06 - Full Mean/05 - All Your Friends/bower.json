@@ -1,0 +1,18 @@
+{
+  "name": "mean-friends",
+  "homepage": "https://github.com/christiankwon/Coding-Dojo",
+  "authors": [
+    "Christian Kwon <christiankwon@outlook.com>"
+  ],
+  "description": "",
+  "main": "Gulpfile.js",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.1.1",
+    "angular": "^1.5.8",
+    "angular-route": "^1.5.8",
+    "materialize": "^0.97.7",
+    "font-awesome": "^4.6.3"
+  }
+}
