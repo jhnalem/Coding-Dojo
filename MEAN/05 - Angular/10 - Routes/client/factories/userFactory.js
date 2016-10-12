@@ -2,7 +2,7 @@
   Our factory: This is going to control all of our data.
   Modularize into a folder called: 'factories' within 'client'
 */
-app.factory('userFactory', [function() {
+app.factory('userFactory', ['$http', function($http) {
   /* Our factory is going to provide the methods to gather user data from a RESTful API
         (we aren't quite there yet, but that's where we are going!)
       Index: return all users
@@ -23,10 +23,21 @@ app.factory('userFactory', [function() {
     }];
 
     this.index = function(functionPassedByControllerAsAnArgToIndex) {
-      if (typeof(functionPassedByControllerAsAnArgToIndex) === 'function') {
-        functionPassedByControllerAsAnArgToIndex(users);
-      }
-    };
+        if (users.length < 10){
+          $http.get('http://52.38.63.134/users').then(function(data){
+            if (typeof(functionPassedByControllerAsAnArgToIndex) === 'function') {
+              users = data.data;
+              functionPassedByControllerAsAnArgToIndex(users);
+            }
+          });
+          return;
+        }
+        else {
+          functionPassedByControllerAsAnArgToIndex(users);
+        }
+
+
+      };
     /*
       Creates a newUser by pushing the newUser argument into the users array
       then runs the callback to return the updated array to controllers
