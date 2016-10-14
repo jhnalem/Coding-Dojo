@@ -7,8 +7,18 @@
 
     module.exports = {
         register: _register,
-        login: _login
+        login: _login,
+        get: _getUser
     };
+
+    function _getUser(request, response) {
+        User.findById(request.params.id, function(error, data) {
+            response.json({
+                error: error,
+                data: data
+            });
+        });
+    }
 
     function _register(request, response) {
         User.create(request.body, function(error, data) {

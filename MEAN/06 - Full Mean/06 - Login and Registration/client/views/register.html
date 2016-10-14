@@ -1,0 +1,61 @@
+<div class="section">
+    <div class="row center-align">
+        <h1>Register</h1>
+    </div>
+
+    <div class="row center-align" ng-show="errors.length">
+        <div class="card-panel red darken-2 white-text" ng-repeat="err in errors track by $index">
+            <span>{{err}}</span>
+        </div>
+    </div>
+
+    <form ng-submit="register(form)" novalidate>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" name="firstName" id="firstName" ng-model="form.firstName" required>
+                <label for="firstName">First Name</label>
+            </div>
+
+            <div class="input-field col s6">
+                <input type="text" name="lastName" id="lastName" ng-model="form.lastName" required>
+                <label for="lastName">Last Name</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="email" name="email" id="email" ng-model="form.email" required>
+                <label for="email">Email</label>
+            </div>
+
+            <div class="input-field col s6">
+                <input type="text" name="birthday" id="birthday" ng-model="form.birthday" required>
+                <label for="birthday">Birthday</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="password" name="password" id="password" ng-model="form.password" required>
+                <label for="password">Password</label>
+            </div>
+
+            <div class="input-field col s6">
+                <input type="password" name="confirmPassword" id="confirmPassword" ng-model="form.confirmPassword" required>
+                <label for="confirmPassword">Confirm Password</label>
+            </div>
+
+            <div class="col s12 center-align">
+                <div class="card-panel red darken-2 white-text" ng-show="!passwordsMatch">
+                    <span>Passwords do not match.</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col s12">
+                <button class="btn">Register</button>
+            </div>
+        </div>
+    </form>
+</div>
