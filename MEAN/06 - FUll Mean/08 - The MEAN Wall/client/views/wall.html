@@ -1,0 +1,38 @@
+<div class="section">
+    <div class="row">
+        <div class="right">Welcome {{user.firstName}} | <a href ng-click="logout()">Log Out</a></div>
+        <h1>Full MEAN Wall</h1>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea name="messageText" id="messageText" class="materialize-textarea" ng-model="messageText"></textarea>
+            <label for="messageText">Post a new message</label>
+        </div>
+
+        <div class="col s12">
+            <button class="btn green darken-2 white-text" ng-click="postMessage()">Post Message</button>
+        </div>
+    </div>
+
+    <div class="messagesContainer">
+        <div class="row" ng-repeat="msg in messages track by $index">
+            <p><strong>{{msg._author.firstName}}</strong> | {{msg.createdAt}}<br>{{msg.text}}</p>
+
+            <div class="comments">
+                <p ng-repeat="comm in msg.comments"><strong>{{comm._author.firstName}}</strong> | {{comm.createdAt}}<br>{{comm.text}} </p>
+            </div>
+
+            <ng-form name="form{{$index}}">
+                <div class="input-field col s12">
+                    <textarea name="comment" id="comment{{msg.index}}" class="materialize-textarea" ng-model="commentText"></textarea>
+                    <label for="comment{{$index}}">Post a comment</label>
+                </div>
+
+                <div class="col s12">
+                    <button class="btn orange white-text" ng-click="postComment()">Post Comment</button>
+                </div>
+            </ng-form>
+        </div>
+    </div>
+</div>

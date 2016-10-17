@@ -1,0 +1,73 @@
+<div class="section">
+    <div class="row">
+        <form name="registerFormForm" ng-submit="register(registerForm)" novalidate>
+            <div class="col s12 m6">
+                <h3 class="center-align" ng-click="fillRegister()">Register</h3>
+
+                <div class="card-panel green white-text center-align" ng-show="registerSuccess">
+                    <span>{{registerSuccess}}</span>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="text" id="register_firstName" ng-model="registerForm.firstName">
+                    <label for="register_firstName">First Name:</label>
+                    <div class="card-panel red white-text center-align" ng-show="registerErrors.firstName.message">{{registerErrors.firstName.message}}</div>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="text" id="register_lastName" ng-model="registerForm.lastName">
+                    <label for="register_lastName">Last Name:</label>
+                    <div class="card-panel red white-text center-align" ng-show="registerErrors.lastName.message">{{registerErrors.lastName.message}}</div>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="email" id="register_email" ng-model="registerForm.email">
+                    <label for="register_email">Email:</label>
+                    <div class="card-panel red white-text center-align" ng-show="registerErrors.email.message">{{registerErrors.email.message}}</div>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="password" id="register_password" ng-model="registerForm.password">
+                    <label for="register_password">Password:</label>
+                    <div class="card-panel red white-text center-align" ng-show="registerErrors.password.message">{{registerErrors.password.message}}</div>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="password" id="register_confirmPassword" ng-model="registerForm.confirmPassword">
+                    <label for="register_confirmPassword">Confirm Password:</label>
+                    <div class="card-panel red white-text center-align" ng-show="registerErrors.confirmPassword.message">{{registerErrors.confirmPassword.message}}</div>
+                </div>
+
+                <div class="col s10 offset-s1">
+                    <input type="submit" value="Register" class="btn green white-text">
+                </div>
+            </div>
+        </form>
+
+        <form ng-submit="login()" novalidate>
+            <div class="col s12 m6">
+                <h3 class="center-align" ng-click="fillLogin()">Login</h3>
+
+                <div class="card-panel green white-text center-align" ng-show="loginSuccess">
+                    <span>{{loginSuccess}}</span>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="email" id="login_email" ng-model="loginForm.email">
+                    <label for="login_email">Email:</label>
+                    <div class="card-panel red white-text center-align" ng-show="loginErrors.email.message">{{loginErrors.email.message}}</div>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="password" id="login_password" ng-model="loginForm.password">
+                    <label for="login_password">Password:</label>
+                    <div class="card-panel red white-text center-align" ng-show="loginErrors.password.message">{{loginErrors.password.message}}</div>
+                </div>
+
+                <div class="col s10 offset-s1">
+                    <input type="submit" value="Login" class="btn green white-text">
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
