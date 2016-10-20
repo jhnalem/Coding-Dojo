@@ -1,0 +1,16 @@
+<div class="section">
+    <div class="row">
+        <h4>Products</h4>
+        <p ng-repeat="product in products | limitTo:2">{{product.name}} ({{product.quantity}} left)</p>
+    </div>
+
+    <div class="row">
+        <h4>Recent Orders</h4>
+        <p ng-repeat="order in orders | limitTo:4">{{order._user.name}} bought {{order.quantity}} {{order._product.name}}s</p>
+    </div>
+
+    <div class="row">
+        <h4>New Customers</h4>
+        <p ng-repeat="user in users | limitTo:3">{{user.name}}</p>
+    </div>
+</div>

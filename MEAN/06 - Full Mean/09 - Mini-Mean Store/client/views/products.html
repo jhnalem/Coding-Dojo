@@ -1,0 +1,53 @@
+<div class="section">
+    <form ng-submit="createProduct(pF)">
+        <div class="row">
+            <div class="col s4">
+                <div class="input-field col s12">
+                    <input type="text" name="name" id="name" ng-model="pF.name">
+                    <label for="name">Name:</label>
+
+                    <div class="card-panel red white-text center-align" ng-show="errors.name">{{errors.name.message}}</div>
+                </div>
+
+                <div class="input-field col s12">
+                    <input type="text" name="image" id="image" ng-model="pF.image">
+                    <label for="image">Image:</label>
+
+                    <div class="card-panel red white-text center-align" ng-show="errors.image">{{errors.image.message}}</div>
+                </div>
+
+                <div class="input-field col s12">
+                    <input type="text" name="description" id="description" ng-model="pF.description">
+                    <label for="description">Description:</label>
+
+                    <div class="card-panel red white-text center-align" ng-show="errors.description">{{errors.description.message}}</div>
+                </div>
+
+                <div class="input-field col s12">
+                    <input type="text" name="quantity" id="quantity" ng-model="pF.quantity">
+                    <label for="quantity">Quantity:</label>
+
+                    <div class="card-panel red white-text center-align" ng-show="errors.quantity">{{errors.quantity.message}}</div>
+                </div>
+
+                <div class="col s12">
+                    <input type="submit" value="Add" class="btn blue white-text">
+                </div>
+            </div>
+
+            <div class="col s8">
+                <div class="card" ng-repeat="product in products">
+                    <div class="card-image">
+                        <img ng-src="{{product.image}}" alt="{{product.name}}">
+                        <span class="card-title">{{product.name}}</span>
+                    </div>
+
+                    <div class="card-content">
+                        <p>{{product.description}}</p>
+                        <p>{{product.quantity}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

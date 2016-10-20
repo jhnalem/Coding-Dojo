@@ -1,0 +1,27 @@
+{
+  "name": "discussion-board",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Christian Kwon <christiankwon@outlook.com>",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "mongoose": "^4.6.3"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.17.2",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-plumber": "^1.1.0",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "1.7.x"
+  }
+}

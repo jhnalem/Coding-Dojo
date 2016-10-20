@@ -82,7 +82,6 @@
 
                 response.json(res);
             });
-
         } else {
             response.json({
                 error: {

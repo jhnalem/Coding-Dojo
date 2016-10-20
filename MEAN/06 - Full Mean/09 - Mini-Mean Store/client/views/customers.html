@@ -1,0 +1,39 @@
+<div class="section">
+    <form ng-submit="createCustomer(customerName)">
+        <div class="row">
+            <div class="col s4">
+                <div class="input-field col s12">
+                    <input type="text" name="customerName" id="customerName" ng-model="customerName">
+                    <label for="customerName">Customer Name:</label>
+
+                    <div class="card-panel red white-text center-align" ng-show="errors.name">{{errors.name.message}}
+                    </div>
+                </div>
+
+                <div class="col s12">
+                    <input type="submit" value="Add" class="btn blue white-text">
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>Customer Name</th>
+                    <th>Created Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="user in users">
+                    <td>{{user.name}}</td>
+                    <td>{{user.createdAt}}</td>
+                    <td><button class="btn" ng-click="removeUser()">Remove</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

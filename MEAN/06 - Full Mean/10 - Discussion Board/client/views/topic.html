@@ -1,0 +1,42 @@
+<div class="section">
+    <div class="right">
+        <a href="/#/dashboard">Dashboard</a> |
+        <a href ng-click="logout()">Log Out</a>
+    </div>
+
+    <div class="row">
+        <h5><a href="/#/user/{{topic._user._id}}">{{topic._user.name}}</a> posted a topic:</h5>
+        <p><strong>{{topic.title}}</strong></p>
+        <p>Description: {{topic.description}}</p>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s12">
+            <textarea name="answer" id="answer" class="materialize-textarea" ng-model="answer"></textarea>
+            <label for="answer">Post your answer here</label>
+        </div>
+
+        <div class="col s12">
+            <button class="btn green" ng-click="postAnswer(answer)">Post</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="row" ng-repeat="post in topic.posts">
+            <p><a href="/#/user/{{post._user._id}}">{{post._user.name}}</a>: {{post.text}}</p>
+            <div class="comments">
+                <p ng-repeat="comment in post.comments"><a href="/#/user/{{comment._user._id}}">{{comment._user.name}}</a>: {{comment.text}}</p>
+                <ng-form name="commentForm">
+                    <div class="input-field col s12">
+                        <input type="text" name="comment" id="comment{{comment._id}}" ng-model="comment">
+                        <label for="comment{{comment._id}}">Post your answer here</label>
+                    </div>
+
+                    <div class="col s12">
+                        <button class="btn green" ng-click="postComment(comment)">Comment</button>
+                    </div>
+                </ng-form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -15,7 +15,8 @@
         },
         _message: {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Message'
+            ref: 'Message',
+            required: true
         }
     }, {timestamps: true});
 

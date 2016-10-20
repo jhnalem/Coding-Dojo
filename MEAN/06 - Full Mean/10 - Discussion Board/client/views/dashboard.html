@@ -1,0 +1,71 @@
+<div class="section">
+    <div class="right">
+        <a href="/#/dashboard">Dashboard</a> |
+        <a href ng-click="logout()">Log Out</a>
+    </div>
+    <h4>{{user.name}}</h4>
+
+    <div class="row">
+        <table>
+            <thead>
+                <tr>
+                    <th>Category</th>
+                    <th>Topic</th>
+                    <th>User Name</th>
+                    <th>Posts</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr ng-repeat="topic in topics">
+                    <td>{{topic.category}}</td>
+                    <td><a href="/#/topic/{{topic._id}}">{{topic.title}}</a></td>
+                    <td><a href="/#/user/{{topic._user._id}}">{{topic._user.name}}</a></td>
+                    <td>COUNT</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="row">
+        <h5>Add a new topic</h5>
+        <form ng-submit="createTopic()">
+            <div class="input-field col s10 offset-s1">
+                <input type="text" name="topic" id="topic" ng-model="topic">
+
+                <label for="topic">Topic:</label>
+
+                <div class="card-panel red white-text" ng-show="errors.title">
+                    {{errors.title.message}}
+                </div>
+            </div>
+
+            <div class="input-field col s10 offset-s1">
+                <input type="text" name="description" id="description" ng-model="description">
+
+                <label for="description">Description:</label>
+
+                <div class="card-panel red white-text" ng-show="errors.description">
+                    {{errors.description.message}}
+                </div>
+            </div>
+
+
+            <div class="input-field col s10 offset-s1">
+                <select name="category" id="category" class="browser-default" ng-model="category">
+                    <option value="" disabled selected>Select a category</option>
+                    <option ng-repeat="category in categories">{{category}}</option>
+                </select>
+
+                <div class="card-panel red white-text" ng-show="errors.category">
+                    {{errors.category.message}}
+                </div>
+            </div>
+
+
+            <div class="col s10 offset-s1">
+                <input type="submit" value="Add Topic" class="btn green">
+            </div>
+        </form>
+    </div>
+</div>

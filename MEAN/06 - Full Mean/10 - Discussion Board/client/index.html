@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discussion Board</title>
+
+    <link rel="stylesheet" href="/materialize/dist/css/materialize.min.css">
+    <link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+    <main ng-app="app">
+        <div class="container">
+            <div ng-view ng-cloak></div>
+        </div>
+    </main>
+
+    <script src="/jquery/dist/jquery.min.js"></script>
+    <script src="/materialize/dist/js/materialize.min.js"></script>
+
+    <script src="/angular/angular.js"></script>
+    <script src="/angular-route/angular-route.js"></script>
+    <script src="/angular-cookies/angular-cookies.js"></script>
+    <script src="/app.js"></script>
+    <script src="/factories/UserFactory.js"></script>
+    <script src="/factories/DiscussionFactory.js"></script>
+    <script src="/controllers/IndexController.js"></script>
+    <script src="/controllers/DashboardController.js"></script>
+    <script src="/controllers/TopicController.js"></script>
+    <script src="/controllers/UserController.js"></script>
+
+    <script src="/assets/js/script.js"></script>
+</body>
+</html>
