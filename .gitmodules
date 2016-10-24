@@ -10,3 +10,6 @@
 [submodule "Belt Exams/Python/python_belt"]
 	path = Belt Exams/Python/python_belt
 	url = git@github.com:christiankwon/python_belt.git
+[submodule "Belt Exams/MEAN/mean-belt"]
+	path = Belt Exams/MEAN/mean-belt
+	url = https://github.com/christiankwon/mean-belt.git
