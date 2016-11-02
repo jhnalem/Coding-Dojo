@@ -6,7 +6,7 @@ namespace ConsoleApplication
 {
     public class Program
     {
-        private static ConsoleWithDb.DbConnector Q = new ConsoleWithDb.DbConnector();
+        private static DbConnector Q = new DbConnector();
 
         public static List<Dictionary<string, object>> displayUsers() {
             var result = Q.ExecuteQuery("SELECT * FROM users");

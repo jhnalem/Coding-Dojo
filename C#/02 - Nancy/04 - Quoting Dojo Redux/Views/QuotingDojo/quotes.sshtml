@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuotingDojo</title>
+    <link rel="stylesheet" href="Content/style.css"/>
+</head>
+<body>
+    <h1>Here are the awesome quotes!</h1>
+
+    @Each
+        <div>
+            <p>
+                "@Current.quote"
+                <br>
+                @Current.name at @Current.created_at
+            </p>
+            <a href="/like/@Current.id">Like</a> @Current.likes
+        </div>
+    @EndEach
+</body>
+</html>

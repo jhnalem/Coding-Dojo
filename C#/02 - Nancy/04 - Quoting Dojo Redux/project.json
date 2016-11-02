@@ -1,0 +1,54 @@
+{
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "copyToOutput": ["Views/QuotingDojo/*", "Content/*"]
+  },
+  "dependencies": {
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.AspNetCore.Owin": "1.0.0",
+    "Nancy": "2.0.0-barneyrubble",
+    "Microsoft.NETCore.App": {
+        "version": "1.0.0",
+        "type": "platform"
+    },
+
+    // Dependency for Console Logging
+    "Microsoft.Extensions.Logging.Console": "1.0.0",
+
+    // Dependencies for Session
+    "Nancy.Session.InMemory": "0.9.1-pre",
+    "Nancy.Session.Persistable": "0.9.1-pre",
+    "FSharp.Core": "4.0.1.7-alpha",
+
+    // Dependency for Backend API calls
+    "Newtonsoft.Json": "9.0.1",
+
+    // Dependency for Database connections
+    "MySqlConnector": "0.1.0-alpha12",
+
+    //Dependency for Deployment
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0"
+  },
+  "frameworks": {
+    "netcoreapp1.0": {}
+  },
+  "tools": {
+      // Enable dotnet Watch with $ dotnet watch {run/restore/etc.}
+      "Microsoft.DotNet.Watcher.Tools": "1.0.0-preview2-final",
+
+      // Tool for deployment integration
+      "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
+  },
+  // Deployment Options
+  "publishOptions": {
+      "include": [
+          "Content",
+          "Views",
+          "web.config"
+      ]
+  },
+  // Deployment IIS connection initialization
+  "scripts": {
+      "postpublish": "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
+  }
+}

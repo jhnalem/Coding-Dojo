@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Great Number Game</title>
+    <link rel="stylesheet" href="Content/style.css"/>
+</head>
+<body>
+    <h1>Welcome to the Great Number Game!</h1>
+    <p>I am thinking of a number between 1 and 100<br>Take a guess!</p>
+
+    @ViewBag.message
+
+    @If.Context.ViewBag.isCorrect
+        <form action="/reset" method="post">
+            <input type="submit" value="Play Again">
+        </form>
+    @EndIf
+
+    @IfNot.Context.ViewBag.isCorrect
+        <form action="/submit" method="post">
+            <input type="text" name="Number" id="number">
+            <input type="submit" value="Submit">
+        </form>
+    @EndIf
+
+</body>
+</html>

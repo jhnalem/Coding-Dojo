@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Login &amp; Registration</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+    <link rel="stylesheet" href="Content/style.css"/>
+</head>
+<body>
+    <div class="container">
+        <div class="section">
+            <div class="row center-align">
+                <h1>Login!</h1>
+                <a href="/register">Register</a>
+            </div>
+
+            @If.Context.ViewBag.hasErrors
+                <div class="section">
+                    <div class="row">
+                    @Each
+                        <div class="card card-panel red darken-2 white-text center-align">
+                            <div class="card-text white-text">@Current</div>
+                        </div>
+                    @EndEach
+                    </div>
+                </div>
+            @EndIf
+
+            <div class="section">
+                <form action="/login" method="post">
+                    <div class="row">
+                        <div class="col input-field s10 offset-s1">
+                            <input type="email" name="email" id="email">
+                            <label for="email">Email Address:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col input-field s10 offset-s1">
+                            <input type="password" name="password" id="password">
+                            <label for="password">Password:</label>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col s10 offset-s1">
+                            <input type="submit" value="Login" class="btn">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+</body>
+</html>

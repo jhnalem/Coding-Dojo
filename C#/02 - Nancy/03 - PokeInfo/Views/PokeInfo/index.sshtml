@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Poke Info</title>
+    <link rel="stylesheet" href="Content/style.css"/>
+</head>
+<body>
+    <h1>Poke Info</h1>
+
+    <p>Pokemon: @ViewBag.name</p>
+    <p>Type(s): @ViewBag.type</p>
+    <p>Height: @ViewBag.height</p>
+    <p>Weight: @ViewBag.weight</p>
+    <img src="@ViewBag.sprite" alt="@ViewBag.name">
+
+</body>
+</html>

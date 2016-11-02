@@ -57,12 +57,12 @@ namespace ConsoleApplication
 
         public Wizard(string name, int str, int intel, int dex, int hp) : base(name, str, intel, dex, hp)
         {
-            
+
         }
 
         public void Heal()
         {
-            Health += Intelligence * 10; 
+            Health += Intelligence * 10;
         }
 
         public void Fireball(Object obj)
@@ -89,7 +89,7 @@ namespace ConsoleApplication
 
         public Ninja(string name, int str, int intel, int dex, int hp) : base(name, str, intel, dex, hp)
         {
-            
+
         }
 
         public void Steal(Object obj)
@@ -151,7 +151,7 @@ namespace ConsoleApplication
             Console.WriteLine("There are {0} samuri.", Count);
         }
     }
-    
+
     public class Program
     {
         public static void Main(string[] args)

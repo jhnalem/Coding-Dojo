@@ -1,0 +1,33 @@
+{
+  "buildOptions": {
+    "emitEntryPoint": true,
+    "copyToOutput": ["Views/PokeInfo/*", "Content/*"]
+  },
+  "dependencies": {
+    "Microsoft.AspNetCore.Server.Kestrel": "1.0.0",
+    "Microsoft.AspNetCore.Owin": "1.0.0",
+    "Nancy": "2.0.0-barneyrubble",
+    "Microsoft.NETCore.App": {
+        "version": "1.0.0",
+        "type": "platform"
+    },
+
+    // Dependency for Console Logging
+    "Microsoft.Extensions.Logging.Console": "1.0.0",
+
+    // Dependencies for Session
+    "Nancy.Session.InMemory": "0.9.1-pre",
+    "Nancy.Session.Persistable": "0.9.1-pre",
+    "FSharp.Core": "4.0.1.7-alpha",
+
+    // Dependency for Backend API calls
+    "Newtonsoft.Json": "9.0.1"
+  },
+  "frameworks": {
+    "netcoreapp1.0": {}
+  },
+  "tools": {
+      // Enable dotnet Watch with $ dotnet watch {run/restore/etc.}
+      "Microsoft.DotNet.Watcher.Tools": "1.0.0-preview2-final"
+  }
+}

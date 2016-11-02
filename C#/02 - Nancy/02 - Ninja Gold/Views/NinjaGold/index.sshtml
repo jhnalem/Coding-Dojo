@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ninja Gold</title>
+    <link rel="stylesheet" href="Content/style.css"/>
+</head>
+<body>
+    <div>
+        <label for="gold">Your Gold</label>
+        <input type="text" name="gold" id="gold" value="@ViewBag.gold" readonly>
+
+        <form action="/reset" method="post">
+            <input type="submit" value="Reset">
+        </form>
+    </div>
+
+    <div>
+        <div>
+            <h3>Farm</h3>
+            <p>(earns 10-20 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="location" value="farm">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div>
+            <h3>Cave</h3>
+            <p>(earns 5-10 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="location" value="cave">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div>
+            <h3>House</h3>
+            <p>(earns 2-5 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="location" value="house">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <div>
+            <h3>Casino</h3>
+            <p>(earns/takes 0-50 golds)</p>
+            <form action="/process_money" method="post">
+                <input type="hidden" name="location" value="casino">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+    </div>
+
+    <div>
+        @Each
+            <p>@Current</p>
+        @EndEach
+    </div>
+</body>
+</html>
