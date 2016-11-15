@@ -1,0 +1,26 @@
+@model TheWall.Models.Message
+
+<div class="col s11 offset-s1 message">
+    <p>@Model.User.FirstName @Model.User.LastName - @Model.CreatedAt</p>
+    <p>@Model.Text</p>
+
+    <div class="col s11 offset-s1">
+        @foreach (var comment in @Model.Comments)
+        {
+            @Html.Partial("Comment", comment)
+        }
+
+        <form asp-controller="Wall" asp-action="PostComment"asp-route-Id="@Model.Id" method="post">
+            <div class="input-field col s12">
+                <input type="text" name="Text" id="comment-@Model.Id">
+                <label for="comment-@Model.Id">Comment</label>
+            </div>
+
+            <div class="col s12">
+                <button type="submit" class="btn">Post</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="clearfix divider grey lighten-1"></div>

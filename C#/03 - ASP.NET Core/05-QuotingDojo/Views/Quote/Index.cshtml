@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            @{
+                foreach (var error in ViewBag.errors)
+                {
+                    if (@error.Errors.Count > 0)
+                    {
+                        <div class="card-panel red white-text center-align">
+                            <span class="card-text">@error.Errors[0].ErrorMessage</span>
+                        </div>
+                    }
+                }
+            }
+        </div>
+
+        <div class="row">
+            <form action="/quote" method="post">
+                <div class="input-field col s6 offset-s3">
+                    <input type="text" name="Name" id="Name"/>
+                    <label for="Name">Your Name:</label>
+                </div>
+
+                <div class="input-field col s6 offset-s3">
+                    <textarea name="Text" id="Text" cols="30" rows="10" class="materialize-textarea"></textarea>
+                    <label for="Text">Your Quote:</label>
+                </div>
+
+                <div class="col s4 offset-s4 center-align">
+                    <input type="submit" value="Submit" class="btn" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

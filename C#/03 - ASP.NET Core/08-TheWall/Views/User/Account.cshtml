@@ -1,0 +1,42 @@
+@{
+    ViewData["Title"] = "Account";
+}
+
+<nav class="blue-grey darken-1">
+    <div class="container nav-wrapper">
+        <a href="/" class="brand-logo">The Wall</a>
+        <ul class="right">
+            @{
+                if (ViewBag.User == null)
+                {
+                    <li><a href="/account">Login</a></li>
+                }
+                else
+                {
+                    <li>Welcome @ViewBag.User.FirstName</li>
+                    <li><a href="/logout">Log Out</a></li>
+                }
+            }
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="section">
+        <div class="row center">
+            <h1>Welcome to the Wall!</h1>
+        </div>
+
+        <div asp-validation-summary="All"></div>
+
+        <div class="row">
+            <div class="col s12 m6">
+                @Html.Partial("Login")
+            </div>
+
+            <div class="col s12 m6">
+                @Html.Partial("Register")
+            </div>
+        </div>
+    </div>
+</div>

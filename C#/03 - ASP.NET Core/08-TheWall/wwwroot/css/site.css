@@ -1,0 +1,8 @@
+.message {
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+
+.divider:last-child {
+    display: none;
+}

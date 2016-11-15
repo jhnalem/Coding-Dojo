@@ -1,0 +1,17 @@
+@model TheWall.Models.User
+
+<form asp-controller="User" asp-action="PostLogin" method="post">
+    <h4 class="center">Login</h4>
+
+    <div class="input-field col s12">
+        <input asp-for="Email"><label asp-for="Email"></label>
+    </div>
+
+    <div class="input-field col s12">
+        <input asp-for="Password"><label asp-for="Password"></label>
+    </div>
+
+    <div class="col s12 center">
+        <button type="submit" class="btn">Login</button>
+    </div>
+</form>

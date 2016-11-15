@@ -1,0 +1,67 @@
+@{
+    ViewData["Title"] = "Login";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row center-align">
+            <h1>Login!</h1>
+            <a href="/register">Register</a>
+            <a href="/quotes">Quotes</a>
+        </div>
+
+        @*{
+            if (ViewBag.Error is Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary.ValueEnumerable)
+            {
+                <div class="section">
+                    <div class="row">
+                        @foreach(var error in ViewBag.Error)
+                        {
+                            if (@error.Errors.Count > 0)
+                            {
+                                <div class="card card-panel red darken-2 white-text center-align">
+                                    <div class="card-text white-text">@error.Errors[0].ErrorMessage</div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            }
+        }
+
+        @if (ViewBag.Success != null)
+        {
+            <div class="section">
+                <div class="row">
+                    <div class="card card-panel green darken-2 white-text center-align">
+                        <div class="card-text white-text">@ViewBag.Success</div>
+                    </div>
+                </div>
+            </div>
+        }*@
+
+        <div class="section">
+            <form action="/login" method="post">
+                <div class="row">
+                    <div class="col input-field s10 offset-s1">
+                        <input type="email" name="email" id="email">
+                        <label for="email">Email Address:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col input-field s10 offset-s1">
+                        <input type="password" name="password" id="password">
+                        <label for="password">Password:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <input type="submit" value="Login" class="btn">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+{
+  "name": "08-TheWall",
+  "private": true,
+  "dependencies": {
+    "materialize" : "0.97.8"
+    
+  }
+}

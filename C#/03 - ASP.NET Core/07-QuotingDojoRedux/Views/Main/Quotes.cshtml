@@ -1,0 +1,39 @@
+@{
+    ViewData["Title"] = "Quotes";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row center-align">
+            <h1>Quotes</h1>
+            <a href="/">Home</a>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+        </div>
+
+        <div class="row">
+            @foreach (var quote in ViewBag.Quotes)
+            {
+                <div class="quote col s12">
+                    <p>
+                        <strong>@quote.Text</strong>
+                        <br>
+                        - @quote.User.FirstName &#64; @quote.CreatedAt
+                    </p>
+                        <p> #Likes @quote.Likes |
+                    @{
+                        if (ViewBag.UserId != null && ViewBag.UserId == @quote.User.Id)
+                        {
+                            <a href="/delete/@quote.Id">Delete</a>
+                        }
+                        else
+                        {
+                            <a href="/like/@quote.Id">Like</a>
+                        }
+                    }
+                        </p>
+                </div>
+            }
+        </div>
+    </div>
+</div>

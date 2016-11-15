@@ -276,7 +276,11 @@ __pycache__/
 
 
 ### VisualStudioCode ###
-.vscode/*
+.vscode
 !.vscode/settings.json
 !.vscode/tasks.json
 !.vscode/launch.json
+
+appsettings.json
+**/wwwroot/lib/*
+!**/wwwroot/lib/dist/

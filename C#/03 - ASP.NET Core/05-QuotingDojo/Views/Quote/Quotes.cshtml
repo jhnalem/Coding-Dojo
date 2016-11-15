@@ -1,0 +1,27 @@
+@{
+    ViewData["Title"] = "Quotes";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <h1>Quotes</h1>
+            <a href="/" class="right">Write your own!</a>
+        </div>
+        <div class="row">
+            @{
+                foreach (var quote in Model)
+                {
+                    <p>
+                        @quote.Text
+                        <br>
+                        @quote.Name at @quote.CreatedAt
+                        <br>
+                        #Likes: @quote.Likes | <a href="/like/@quote.Id">Like</a>
+                    </p>
+                    <hr>
+                }
+            }
+        </div>
+    </div>
+</div>

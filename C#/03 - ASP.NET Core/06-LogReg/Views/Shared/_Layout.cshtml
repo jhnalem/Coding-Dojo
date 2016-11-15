@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>@ViewData["Title"] - LogReg</title>
+
+    <link rel="stylesheet" href="~/lib/materialize/dist/css/materialize.css"
+            asp-fallback-href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css"
+            asp-fallback-test-class="left-align" asp-fallback-test-property="text-align" asp-fallback-test-value="left" />
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+
+<body>
+    @RenderSection("header", required: false)
+
+    <main>
+        @RenderBody()
+    </main>
+
+    @RenderSection("footer", required: false)
+
+    <script src="~/lib/jquery/dist/jquery.js"
+            asp-fallback-src="https://code.jquery.com/jquery-3.1.1.min.js"
+            asp-fallback-test="window.jQuery"></script>
+    <script src="~/lib/materialize/dist/js/materialize.js"
+            asp-fallback-src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"
+            asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

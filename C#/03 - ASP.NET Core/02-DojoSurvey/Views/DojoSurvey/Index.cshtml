@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dojo Survey</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/css/materialize.min.css">
+        <link rel="stylesheet" href="~/css/styles.css"/>
+    </head>
+
+    <body>
+        <main class="section">
+            <div class="container">
+                <div class="row">
+                    <h1 class="center-align">Dojo Survey</h1>
+                </div>
+
+                <form action="/result" method="post">
+                    <div class="row">
+                        <div class="input-field col s10 m4 offset-s1">
+                            <input type="text" name="Name" id="name">
+                            <label for="name">Your Name</label>
+                        </div>
+
+                        <div class="input-field col s10 m4 offset-s1">
+                            <select name="Location" id="location">
+                                <option value="" disabled selected>Select a location</option>
+                                <option value="Seattle">Seattle</option>
+                                <option value="San Jose">San Jose</option>
+                                <option value="Chicago">Chicago</option>
+                            </select>
+                        </div>
+
+                        <div class="input-field col s10 m4 offset-s1">
+                            <select name="Language" id="language">
+                                <option value="" disabled selected>Select a language</option>
+                                <option value="Javascript">Javascript</option>
+                                <option value="Python">Python</option>
+                                <option value="HTML">HTML</option>
+                            </select>
+                        </div>
+
+                        <div class="col s4 offset-s4 center-align">
+                            <input type="submit" value="Submit" class="btn green">
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </main>
+
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+        <script src="~/js/script.js"></script>
+    </body>
+</html>

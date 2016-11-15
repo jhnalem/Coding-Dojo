@@ -1,0 +1,49 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <h1>Quoting Dojo Redux</h1>
+            <a href="/login">Login</a>
+            <a href="/register">Register</a>
+            <a href="/quotes">View Quotes</a>
+            <a href="/logout">Log Out</a>
+        </div>
+
+        @if (ViewBag.User != null)
+        {
+        <div class="row">
+            <form action="/quotes" method="post">
+                <div class="input-field col s10 offset-s1">
+                    <textarea name="Text" id="Text" class="materialize-textarea"></textarea>
+                    <label for="Text">Your Quote:</label>
+                </div>
+
+                <div class="input-field col s10 offset-s1">
+                    <input type="submit" value="Submit" class="btn">
+                </div>
+            </form>
+        </div>
+
+        <div class="row">
+            <h3>Your quotes</h3>
+            @foreach (var quote in ViewBag.User.Quotes)
+            {
+                <div>
+                    <p>@quote.Text - @quote.CreatedAt</p>
+                    <p><a href="/delete/@quote.Id">Delete</a>
+                </div>
+            }
+        </div>
+        }
+        else
+        {
+        <div class="row">
+            <p>Please <a href="/login">login</a> to submit a quote.</p>
+        </div>
+        }
+    </div>
+</div>
+

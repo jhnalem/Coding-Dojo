@@ -1,0 +1,78 @@
+@{
+    ViewData["Title"] = "Register";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row center-align">
+            <h1>Register!</h1>
+            <a href="/login">Login</a>
+        </div>
+
+        <div class="section">
+            <div class="row">
+                @{
+                    if (ViewBag.Error is Microsoft.AspNetCore.Mvc.ModelBinding.ModelStateDictionary.ValueEnumerable)
+                    {
+                        <div class="section">
+                            <div class="row">
+                                @foreach(var error in ViewBag.Error)
+                                {
+                                    if (@error.Errors.Count > 0)
+                                    {
+                                        <div class="card card-panel red darken-2 white-text center-align">
+                                            <div class="card-text white-text">@error.Errors[0].ErrorMessage</div>
+                                        </div>
+                                    }
+                                }
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="section">
+            <form action="/register" method="post">
+                <div class="row">
+                    <div class="col input-field s5 offset-s1">
+                        <input type="text" name="firstName" id="firstName">
+                        <label for="firstName">First Name:</label>
+                    </div>
+
+                    <div class="col input-field s5">
+                        <input type="text" name="lastName" id="lastName">
+                        <label for="lastName">Last Name:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col input-field s10 offset-s1">
+                        <input type="email" name="email" id="email">
+                        <label for="email">Email Address:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col input-field s10 offset-s1">
+                        <input type="password" name="password" id="password">
+                        <label for="password">Password:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col input-field s10 offset-s1">
+                        <input type="password" name="confirmPassword" id="confirmPassword">
+                        <label for="confirmPassword">Confirm Password:</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <input type="submit" value="Register" class="btn">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

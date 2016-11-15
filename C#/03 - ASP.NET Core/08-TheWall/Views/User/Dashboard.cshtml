@@ -1,0 +1,45 @@
+@model TheWall.Models.User
+@model TheWall.Models.Message
+@model TheWall.Models.Comment
+
+<nav class="blue-grey darken-1">
+    <div class="container nav-wrapper">
+        <a href="/" class="brand-logo">Logo</a>
+        <ul class="right">
+            @{
+                if (ViewBag.User == null)
+                {
+                    <li><a href="/login">Login</a></li>
+                }
+                else
+                {
+                    <li>Welcome @ViewBag.User.FirstName</li>
+                    <li><a href="/logout">Log Out</a></li>
+                }
+            }
+        </ul>
+    </div>
+</nav>
+
+<div class="container">
+    <div class="section">
+        <div class="row center">
+            <h1>Welcome to the Wall!</h1>
+        </div>
+
+        <div class="row center">
+            @{
+                if (ViewBag.User == null)
+                {
+                    <a href="/register" class="btn">Register</a>
+                    <a href="/login" class="btn">Login</a>
+                }
+                else
+                {
+                    <a href="/logout" class="btn">Log Out</a>
+                    <a href="/wall" class="btn">The Wall</a>
+                }
+            }
+        </div>
+    </div>
+</div>

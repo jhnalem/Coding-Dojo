@@ -1,0 +1,17 @@
+@{
+    ViewData["Title"] = "Random Word Generator";
+}
+
+<div class="container">
+    <div class="section center-align">
+        <div class="row">
+            <h1>Random Word Generator</h1>
+
+            <form action="/generate" method="post" class="col s4 offset-s4">
+                <h5>Random Word (attempt #@ViewBag.Counter)</h5>
+                <input type="text" name="Word" id="Word" class="center-align" value="@ViewBag.Random" readonly>
+                <input type="submit" value="Generate">
+            </form>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,56 @@
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+    <div class="section">
+        <div class="row">
+            <div class="input-field col s3">
+                <input type="text" name="Gold" id="Gold" class="active" value="@ViewBag.Gold" readonly>
+                <label for="Gold">Your Gold:</label>
+            </div>
+        </div>
+
+        <div class="row">
+            <form action="/process_money" class="col s6 offset-s3 m3 center-align" method="post">
+                <h4><strong>Farm</strong></h4>
+                <h6>(earns 10-20 golds)</h6>
+                <input type="submit" value="Find Gold!" class="btn blue">
+                <input type="hidden" name="location" value="farm">
+            </form>
+
+            <form action="/process_money" class="col s6 offset-s3 m3 center-align" method="post">
+                <h4><strong>Cave</strong></h4>
+                <h6>(earns 5-10 golds)</h6>
+                <input type="submit" value="Find Gold!" class="btn blue">
+                <input type="hidden" name="location" value="cave">
+            </form>
+
+            <form action="/process_money" class="col s6 offset-s3 m3 center-align" method="post">
+                <h4><strong>House</strong></h4>
+                <h6>(earns 2-5 golds)</h6>
+                <input type="submit" value="Find Gold!" class="btn blue">
+                <input type="hidden" name="location" value="house">
+            </form>
+
+            <form action="/process_money" class="col s6 offset-s3 m3 center-align" method="post">
+                <h4><strong>Casino</strong></h4>
+                <h6>(earns/takes 0-50 golds)</h6>
+                <input type="submit" value="Find Gold!" class="btn blue">
+                <input type="hidden" name="location" value="casino">
+            </form>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12">
+                <h3>Activities</h3>
+                @{
+                    foreach (string activity in ViewBag.Activities)
+                    {
+                        @Html.Raw(@activity);
+                    }
+                }
+            </div>
+        </div>
+    </div>
+</div>
